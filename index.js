@@ -48,9 +48,12 @@ let verbs = {
 	'drop off': 'высадиться',
 	'put down': 'положить',
 	'pick up': 'подобрать',
+
 };
 
 let words = { ...verbs };
+
+console.log(Object.keys(words).length);
 
 search.oninput = function (e) {
 	let input = e.target.value;
