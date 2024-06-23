@@ -51,3 +51,12 @@ let verbs = {
 };
 
 let words = { ...verbs };
+
+search.oninput = function (e) {
+	let input = e.target.value;
+	if (input in words) {
+		data.innerHTML = `${input}: ${words[input]}`;
+	} else {
+		data.innerHTML = '';
+	}
+}
