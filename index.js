@@ -1,4 +1,4 @@
-let words = { ...verbs, ...nouns, ...adjectives, ...adverb, ...prepositions };
+let words = { ...verbs, ...nouns, ...adjectives, ...adverb, ...prepositions, ...pronouns };
 
 console.log(Object.keys(words).length);
 
