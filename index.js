@@ -1,6 +1,13 @@
-let words = { ...verbs, ...nouns, ...adjectives, ...adverb, ...prepositions, ...pronouns };
+let words = { 
+	...verbs,
+	...nouns,
+	...adjectives,
+	...adverb,
+	...prepositions,
+	...pronouns };
 
-console.log(Object.keys(words).length);
+let counter = document.querySelector('.counter');
+counter.innerHTML = `words amount: ${Object.keys(words).length}`;
 
 search.oninput = function (e) {
 	let input = e.target.value;
