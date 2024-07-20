@@ -16,10 +16,26 @@ counter.innerHTML = `words amount: ${getWordCount(words)}`;
 document.getElementById('search').oninput = function (e) {
 	const input = e.target.value.trim();
 	const match = search(input, words);
-	console.log(match);
+	data.textContent = makeResultStr(match);
+};
+
+
+function makeResultStr(match) {
+	let str = '';
+	for (let m in match) {
+		const wds = match[m];
+		str += m + ':' + '\n  ';
+
+		for (let i = 0; i < wds.length; i += 1) {
+			str += wds[i].join(' - ');
+			str += '\n';
+			if (i !== wds.length - 1) str += '  '; 
+		}
+
+		str += '\n';
+	}
+	return str;
 }
-
-
 
 
 function getWordCount(words) {
