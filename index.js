@@ -57,8 +57,7 @@ const analizedResultCont = document.getElementById('analize-result');
 getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
 	const wordsFromInput = getWords(text);
-	console.log(wordsFromInput);
-	const newWords = analizeWords(wordsFromInput, words);
+	const newWords = analizeWords(wordsFromInput.map(toLowerCase), words);
 	const wordsToSave = getUniqueElems(newWords);
 
 	//analizedResultCont.textContent = wordsToSave.join(', ');
@@ -93,6 +92,10 @@ function getWords(text) {
 		}
 	});
 	return result;
+}
+
+function toLowerCase(word) {
+	return word[0].toLowerCase() + word.slice(1);
 }
 
 
