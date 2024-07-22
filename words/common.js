@@ -14,4 +14,6 @@ const common = {
 	"it’s": '',
 	'will': '',
 	'with': '',
+	'ah': '',
+	'at': '',
 };
