@@ -95,7 +95,7 @@ li.item_selected {
 }
 
 .page-2 > div:last-child {
-	padding: 10px;
+	padding: 10px 10px 10px 20px;
 }
 
 .page-2.hide-page {
