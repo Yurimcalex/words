@@ -10,7 +10,7 @@ const words = {
 };
 
 
-let counter = document.querySelector('.counter');
+let counter = document.querySelector('.page-1_counter');
 counter.innerHTML = `words amount: ${getWordCount(words)}`;
 
 document.getElementById('search').oninput = function (e) {

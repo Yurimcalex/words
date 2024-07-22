@@ -1,4 +1,8 @@
 body {
+	background: lightgray;
+}
+
+.page-1 {
 	box-sizing: border-box;
 	height: 100vh;
 	padding: 0;
@@ -6,18 +10,17 @@ body {
 	display: flex;
 	justify-content: center;
 	padding-top: 25vh;
-	background: lightgray;
 }
 
-.container {
+.page-1_container {
 	width: 300px;
 }
 
-.search {
+.page-1_search {
 	margin-bottom: 1em; 
 }
 
-.counter {
+.page-1_counter {
 	margin-top: 15px;
 	font-size: 0.8em;
 }
