@@ -42,14 +42,38 @@ const getWordsBtn = document.getElementById('analize');
 const analizedTextArea = document.getElementById('analize-text');
 getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
-	const words = getWords(text);
-	console.log(words);
+	const wordsFromInput = getWords(text);
+	const newWords = analizeWords(wordsFromInput, words);
+	console.log(wordsFromInput, newWords);
 });
 
 
 function getWords(text) {
 	const words = text.split(' ');
 	return words;
+}
+
+
+function analizeWords(wordsFromInput, words) {
+	let result = [];
+	wordsFromInput.forEach(word => {
+		if (isNewWord(word, words)) {
+			result.push(word);
+		}
+	});
+	return result;
+}
+
+
+function isNewWord(word, words) {
+	for (let part in words) {
+		for (let w in words[part]) {
+			if (w === word) {
+				return false;
+			}
+		}
+	}
+	return true;
 }
 
 
