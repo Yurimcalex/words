@@ -70,6 +70,23 @@ getWordsBtn.addEventListener('click', () => {
 });
 
 
+wordsContainer.addEventListener('click', (e) => {
+	const target = e.target;
+	if (target.tagName === 'BUTTON') {
+		const word = target.textContent.trim();
+		const ems = analizedResultCont.querySelectorAll(`[data-word]`);
+		for (let i = 0; i < ems.length; i += 1) {
+			const em = ems[i];
+			if (em.dataset.word === word) {
+				em.style.color = 'red';
+			} else {
+				em.style.color = 'green';
+			}
+		}
+ 	}
+});
+
+
 function createWordsAsBtns_str(words) {
 	return words.reduce((html, word) => html + `<button>${word}</button>`, '');
 }
@@ -78,7 +95,7 @@ function createWordsAsBtns_str(words) {
 function highlight_str(partsFromInput, findedWords) {
 	return partsFromInput.map(word => {
 		if (findedWords.includes(word.toLowerCase())) {
-			return `<em style="color:green;">${word}</em>`
+			return `<em style="color:green;" data-word=${word.toLowerCase()}>${word}</em>`
 		}
 		return word;
 	}).join(' ')
