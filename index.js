@@ -65,13 +65,15 @@ getWordsBtn.addEventListener('click', () => {
 });
 
 
-function highlight_str(wordsFromInput, findedWords) {
-	return wordsFromInput.map(word => {
+function highlight_str(partsFromInput, findedWords) {
+	return partsFromInput.map(word => {
 		if (findedWords.includes(word.toLowerCase())) {
 			return `<em style="color:red;">${word}</em>`
 		}
 		return word;
-	}).join(' ');
+	}).join(' ')
+		.split(' , ').join(', ')
+		.split(' . ').join('. ');
 }
 
 
