@@ -44,8 +44,15 @@ getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
 	const wordsFromInput = getWords(text);
 	const newWords = analizeWords(wordsFromInput, words);
-	console.log(wordsFromInput, newWords);
+	const wordsToSave = getUniqueElems(newWords);
+	
+	console.log(wordsFromInput, newWords, wordsToSave);
 });
+
+
+function getUniqueElems(elems) {
+	return Array.from(new Set(elems));
+}
 
 
 function getWords(text) {
