@@ -26,6 +26,7 @@ navMenu.addEventListener('click', (e) => {
 	if (target.tagName === 'LI') {
 		const pageId = target.dataset.nav;
 		const page = document.getElementById(pageId);
+		if (prevPage === page) return;
 		if (page.classList.contains('hide-page')) {
 			page.classList.remove('hide-page');
 		}
