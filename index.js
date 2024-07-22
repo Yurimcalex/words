@@ -38,6 +38,21 @@ navMenu.addEventListener('click', (e) => {
 });
 
 
+const getWordsBtn = document.getElementById('analize');
+const analizedTextArea = document.getElementById('analize-text');
+getWordsBtn.addEventListener('click', () => {
+	const text = analizedTextArea.value;
+	const words = getWords(text);
+	console.log(words);
+});
+
+
+function getWords(text) {
+	const words = text.split(' ');
+	return words;
+}
+
+
 function makeResultStr(match) {
 	let str = '';
 	for (let m in match) {
