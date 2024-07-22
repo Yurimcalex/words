@@ -28,3 +28,7 @@ body {
 pre {
 	font-size: 1.2em;
 }
+
+.hide-page {
+	display: none;
+}

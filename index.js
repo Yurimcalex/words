@@ -1,5 +1,3 @@
-
-
 const words = {
 	verb: verbs,
 	noun: nouns,
@@ -13,11 +11,30 @@ const words = {
 let counter = document.querySelector('.page-1_counter');
 counter.innerHTML = `words amount: ${getWordCount(words)}`;
 
+
 document.getElementById('search').oninput = function (e) {
 	const input = e.target.value.trim();
 	const match = search(input, words);
 	data.textContent = makeResultStr(match);
 };
+
+
+const navMenu = document.querySelector('.nav-menu');
+let prevPage = null;
+navMenu.addEventListener('click', (e) => {
+	const target = e.target;
+	if (target.tagName === 'LI') {
+		const pageId = target.dataset.nav;
+		const page = document.getElementById(pageId);
+		if (page.classList.contains('hide-page')) {
+			page.classList.remove('hide-page');
+		}
+		if (prevPage) {
+			prevPage.classList.add('hide-page');
+		}
+		prevPage = page;
+	}
+});
 
 
 function makeResultStr(match) {
