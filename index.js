@@ -78,7 +78,7 @@ function createWordsAsBtns_str(words) {
 function highlight_str(partsFromInput, findedWords) {
 	return partsFromInput.map(word => {
 		if (findedWords.includes(word.toLowerCase())) {
-			return `<em style="color:red;">${word}</em>`
+			return `<em style="color:green;">${word}</em>`
 		}
 		return word;
 	}).join(' ')
