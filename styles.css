@@ -9,17 +9,20 @@ ul li {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 	background: lightgray;
 }
 
+.page-1,
+.page-2 {
+	flex: 1;
+}
+
 .page-1 {
-	box-sizing: border-box;
-	height: 100vh;
-	padding: 0;
-	margin: 0;
 	display: flex;
 	justify-content: center;
-	padding-top: 25vh;
 }
 
 .page-1_container {
