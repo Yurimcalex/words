@@ -56,13 +56,12 @@ const analizedTextArea = document.getElementById('analize-text');
 const analizedResultCont = document.getElementById('analize-result');
 getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
-	const wordsFromInput = getWords(text);
+	const partsFromInput = getParts(text);
+	const wordsFromInput = getWords(partsFromInput);;
 	const newWords = analizeWords(wordsFromInput.map(toLowerCase), words);
 	const wordsToSave = getUniqueElems(newWords);
-	console.log(newWords, wordsToSave);
-	//analizedResultCont.textContent = wordsToSave.join(', ');
-	//console.log(wordsFromInput, newWords, wordsToSave);
-	analizedResultCont.innerHTML = highlight_str(wordsFromInput, wordsToSave);
+	
+	analizedResultCont.innerHTML = highlight_str(partsFromInput, wordsToSave);
 });
 
 
@@ -81,18 +80,18 @@ function getUniqueElems(elems) {
 }
 
 
-function getWords(text) {
-	const result = [];
-	const words = text.split(' ');
-	words.forEach(word => {
-		if (word => word.includes('\n')) {
-			result.push(...word.split('\n'));
-		} else {
-			result.push(word);
-		}
-	});
-	return result;
+function getParts(text) {
+	return text
+		.split('.').join(' . ')
+		.split(',').join(' , ')
+		.split('\n').join(' ')
+		.split(' ').filter(word => !!word);
 }
+
+function getWords(parts) {
+	return parts.filter(part => part.length > 1);
+}
+
 
 function toLowerCase(word) {
 	return word[0].toLowerCase() + word.slice(1);
