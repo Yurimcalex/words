@@ -57,6 +57,7 @@ const analizedResultCont = document.getElementById('analize-result');
 getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
 	const wordsFromInput = getWords(text);
+	console.log(wordsFromInput);
 	const newWords = analizeWords(wordsFromInput, words);
 	const wordsToSave = getUniqueElems(newWords);
 
@@ -82,8 +83,16 @@ function getUniqueElems(elems) {
 
 
 function getWords(text) {
+	const result = [];
 	const words = text.split(' ');
-	return words;
+	words.forEach(word => {
+		if (word => word.includes('\n')) {
+			result.push(...word.split('\n'));
+		} else {
+			result.push(word);
+		}
+	});
+	return result;
 }
 
 
