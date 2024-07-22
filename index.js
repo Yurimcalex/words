@@ -40,13 +40,15 @@ navMenu.addEventListener('click', (e) => {
 
 const getWordsBtn = document.getElementById('analize');
 const analizedTextArea = document.getElementById('analize-text');
+const analizedResultCont = document.getElementById('analize-result');
 getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
 	const wordsFromInput = getWords(text);
 	const newWords = analizeWords(wordsFromInput, words);
 	const wordsToSave = getUniqueElems(newWords);
-	
-	console.log(wordsFromInput, newWords, wordsToSave);
+
+	analizedResultCont.textContent = wordsToSave.join(', ');
+	//console.log(wordsFromInput, newWords, wordsToSave);
 });
 
 
