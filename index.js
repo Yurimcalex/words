@@ -59,7 +59,7 @@ getWordsBtn.addEventListener('click', () => {
 	const wordsFromInput = getWords(text);
 	const newWords = analizeWords(wordsFromInput.map(toLowerCase), words);
 	const wordsToSave = getUniqueElems(newWords);
-
+	console.log(newWords, wordsToSave);
 	//analizedResultCont.textContent = wordsToSave.join(', ');
 	//console.log(wordsFromInput, newWords, wordsToSave);
 	analizedResultCont.innerHTML = highlight_str(wordsFromInput, wordsToSave);
@@ -68,7 +68,7 @@ getWordsBtn.addEventListener('click', () => {
 
 function highlight_str(wordsFromInput, findedWords) {
 	return wordsFromInput.map(word => {
-		if (findedWords.includes(word)) {
+		if (findedWords.includes(word.toLowerCase())) {
 			return `<em style="color:red;">${word}</em>`
 		}
 		return word;
