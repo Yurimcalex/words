@@ -54,6 +54,7 @@ navMenu.addEventListener('click', (e) => {
 const getWordsBtn = document.getElementById('analize');
 const analizedTextArea = document.getElementById('analize-text');
 const analizedResultCont = document.getElementById('analize-result');
+const wordsContainer = document.querySelector('.page-2_words')
 getWordsBtn.addEventListener('click', () => {
 	const text = analizedTextArea.value;
 	const partsFromInput = getParts(text);
@@ -62,6 +63,8 @@ getWordsBtn.addEventListener('click', () => {
 	const wordsToSave = getUniqueElems(newWords);
 	
 	analizedResultCont.innerHTML = highlight_str(partsFromInput, wordsToSave);
+
+	wordsContainer.innerHTML = `<div>New words count: ${wordsToSave.length}<div>`
 });
 
 
