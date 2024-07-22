@@ -37,6 +37,18 @@ navMenu.addEventListener('click', (e) => {
 	}
 });
 
+navMenu.addEventListener('click', (e) => {
+	const target = e.target;
+	if (target.tagName === 'LI') {
+		target.classList.add('item_selected');
+		const lis = navMenu.children;
+		for (let i = 0; i < lis.length; i += 1) {
+			if (lis[i] === target) continue;
+			lis[i].classList.remove('item_selected');
+		}
+	}
+});
+
 
 const getWordsBtn = document.getElementById('analize');
 const analizedTextArea = document.getElementById('analize-text');

@@ -39,6 +39,10 @@ body {
 	color: black;
 }
 
+li.item_selected {
+	color: black;
+}
+
 
 .page-1 {
 	display: flex;
