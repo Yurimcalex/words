@@ -76,6 +76,7 @@ li.item_selected {
 
 .page-2 {
 	display: flex;
+	flex-wrap: wrap;
 	padding: 40px;
 }
 
@@ -94,8 +95,14 @@ li.item_selected {
 	margin-top: 15px;
 }
 
-.page-2 > div:last-child {
+.page-2_result {
 	padding: 10px 10px 10px 20px;
+}
+
+.page-2_words {
+	flex-basis: auto;
+	width: 100%;
+	margin-top: 20px;
 }
 
 .page-2.hide-page {
