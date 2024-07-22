@@ -20,7 +20,7 @@ document.getElementById('search').oninput = function (e) {
 
 
 const navMenu = document.querySelector('.nav-menu');
-let prevPage = null;
+let prevPage = document.getElementById('page-1');
 navMenu.addEventListener('click', (e) => {
 	const target = e.target;
 	if (target.tagName === 'LI') {
