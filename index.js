@@ -59,9 +59,20 @@ getWordsBtn.addEventListener('click', () => {
 	const newWords = analizeWords(wordsFromInput, words);
 	const wordsToSave = getUniqueElems(newWords);
 
-	analizedResultCont.textContent = wordsToSave.join(', ');
+	//analizedResultCont.textContent = wordsToSave.join(', ');
 	//console.log(wordsFromInput, newWords, wordsToSave);
+	analizedResultCont.innerHTML = highlight_str(wordsFromInput, wordsToSave);
 });
+
+
+function highlight_str(wordsFromInput, findedWords) {
+	return wordsFromInput.map(word => {
+		if (findedWords.includes(word)) {
+			return `<em style="color:red;">${word}</em>`
+		}
+		return word;
+	}).join(' ');
+}
 
 
 function getUniqueElems(elems) {
