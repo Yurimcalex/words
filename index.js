@@ -1,4 +1,5 @@
 const words = {
+	common,
 	verb: verbs,
 	noun: nouns,
 	adjective: adjectives,
