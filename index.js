@@ -64,8 +64,15 @@ getWordsBtn.addEventListener('click', () => {
 	
 	analizedResultCont.innerHTML = highlight_str(partsFromInput, wordsToSave);
 
-	wordsContainer.innerHTML = `<div>New words count: ${wordsToSave.length}<div>`
+	wordsContainer.innerHTML = 
+		`<div>New words count: ${wordsToSave.length}</div>` +
+		`<div>${createWordsAsBtns_str(wordsToSave)}</div>`;
 });
+
+
+function createWordsAsBtns_str(words) {
+	return words.reduce((html, word) => html + `<button>${word}</button>`, '');
+}
 
 
 function highlight_str(partsFromInput, findedWords) {
