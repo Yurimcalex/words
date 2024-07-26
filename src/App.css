@@ -16,10 +16,17 @@
 
 .nav-menu li {
   margin-left: 25px;
-  color: gray;
-  cursor: pointer;
 }
 
-.nav-menu li:hover {
+.nav-menu li a {
+  color: gray;
+  text-decoration: none;
+}
+
+.nav-menu li a:hover {
+  color: black;
+}
+
+.nav-menu li a.active {
   color: black;
 }
