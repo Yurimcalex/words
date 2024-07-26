@@ -1,4 +1,4 @@
-const pronouns = {
+export default {
 	'nothing': 'ничто, ничего',
 	'everything': 'все',
 	'nobody': 'никто',

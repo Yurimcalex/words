@@ -1,4 +1,4 @@
-const common = {
+export default {
 	'the': '',
 	'of': '',
 	'but': '',

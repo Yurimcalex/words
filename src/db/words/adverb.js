@@ -1,4 +1,4 @@
-const adverb = {
+export default {
 	'early': 'рано',
 	'late': 'поздно',
 	'far': 'далеко',

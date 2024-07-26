@@ -1,4 +1,4 @@
-const prepositions = {
+export default {
 	'above': 'выше, над',
 	'below': 'ниже',
 	'behind': 'позади',

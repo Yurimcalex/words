@@ -1,4 +1,4 @@
-const adjectives = {
+export default {
 	'beautiful': 'красивый',
 	'ugly': 'уродливый',
 	'affirmative': 'утвердительный',

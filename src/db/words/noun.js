@@ -1,4 +1,4 @@
-const nouns = {
+export default {
 	'south': 'юг',
 	'north': 'север',
 	'west': 'запад',

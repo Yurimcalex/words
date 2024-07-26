@@ -1,4 +1,4 @@
-const verbs = {
+export default {
 	'fix up': 'исправить, починить',
 	'botch up': 'испортить, поломать',
 	'goof off': 'бездельничать',
