@@ -4,8 +4,6 @@ import Header from './Header.jsx';
 import Words from './Words.jsx';
 import NewWords from './NewWords.jsx';
 
-import { db } from './db/db.js';
-
 
 function App() {
   return (
