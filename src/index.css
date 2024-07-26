@@ -8,12 +8,6 @@ ul li {
   list-style: none;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: lightgray;
-}
 
 .page-1,
 .page-2 {
