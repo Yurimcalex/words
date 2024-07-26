@@ -29,7 +29,9 @@ export default function NewWords() {
 			<div className="new-words_result">
 				{parts.map(part => {
 					if (newWords.includes(part.toLowerCase())) {
-						return <><em style={{color: 'green'}}>{part}</em>{' '}</>;
+						return (
+							<><em style={{color: 'green'}}>{part}</em>{' '}</>
+						);
 					}
 					return part + ' ';
 				})}
@@ -37,6 +39,9 @@ export default function NewWords() {
 			
 			<div className="new-words_counter">
 				<div>New words count: {newWords.length}</div>
+				<div>
+					{newWords.map(word => <button>{word}</button>)}
+				</div>
 			</div>
 		</div>
 	);
