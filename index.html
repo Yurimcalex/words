@@ -1,51 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Words</title>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<div class="header">
-		<ul class="nav-menu">
-			<li data-nav="page-1" class="item_selected">page 1</li>
-			<li data-nav="page-2">page 2</li>
-		</ul>
-	</div>
-
-	<div id="page-1" class="page-1">
-		<div class="page-1_container">
-			<div class="page-1_search">
-				<input type="text" id="search">
-			</div>
-			
-			<div class="page-1_counter">words amount:</div>
-			
-			<div class="data">
-				<pre id="data"></pre>
-			</div>
-		</div>
-	</div>
-
-	<div id="page-2" class="page-2 hide-page">
-		<div>
-			<textarea id="analize-text"></textarea>
-			<button id="analize">Get words</button>
-		</div>
-		<div id="analize-result" class="page-2_result"></div>
-		<div class="page-2_words">
-			<div>New words count: 0</div>
-		</div>
-	</div>
-	
-	<script src="words/verbs.js"></script>
-	<script src="words/nouns.js"></script>
-	<script src="words/adjectives.js"></script>
-	<script src="words/adverb.js"></script>
-	<script src="words/prepositions.js"></script>
-	<script src="words/pronouns.js"></script>
-	<script src="words/common.js"></script>
-	<script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React sandox</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
