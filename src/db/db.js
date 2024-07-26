@@ -15,5 +15,28 @@ export const db = {
 		adverb,
 		preposition,
 		pronoun
+	},
+
+	getWordCount() {
+		let result = 0;
+		for (let part in this.words) {
+			result += Object.keys(this.words[part]).length;
+		}
+		return result;
+	},
+
+	search(word) {
+		const result = {};
+		for (let part in this.words) {
+			const match = []
+			const data = this.words[part];
+			for (let w in data) {
+				if (w === word) {
+					match.push([word, data[w]])
+				}
+			}
+			if (match.length) result[part] = match;
+		}
+		return result;
 	}
 };

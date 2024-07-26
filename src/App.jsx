@@ -5,7 +5,8 @@ import Words from './Words.jsx';
 import NewWords from './NewWords.jsx';
 
 import { db } from './db/db.js';
-
+console.log(db.getWordCount());
+console.log(db.search('save'));
 
 function App() {
   return (
