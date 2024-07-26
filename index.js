@@ -83,8 +83,23 @@ wordsContainer.addEventListener('click', (e) => {
 				em.style.color = 'green';
 			}
 		}
+
+		fetchTranslation(word);
  	}
 });
+
+
+async function fetchTranslation(word) {
+	const url = `https://api.mymemory.translated.net/get?q=${word}&langpair=en|ru`;
+	const response = await fetch(url);
+
+	if (response.ok) { 
+	  const json = await response.json();
+	  console.log(json);
+	} else {
+	  console.log("HTTP-Error: " + response.status);
+	}
+}
 
 
 function createWordsAsBtns_str(words) {
