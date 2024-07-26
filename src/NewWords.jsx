@@ -6,6 +6,7 @@ export default function NewWords() {
 	const [text, setText] = useState('');
 	const [parts, setParts] = useState([]);
 	const [newWords, setNewWords] = useState([]);
+	const [highlightWord, setHighlightWord] = useState('');
 
 	const handleClick = () => {
 		const parts = divideIntoParts(text);
@@ -30,7 +31,7 @@ export default function NewWords() {
 				{parts.map(part => {
 					if (newWords.includes(part.toLowerCase())) {
 						return (
-							<><em style={{color: 'green'}}>{part}</em>{' '}</>
+							<><em style={{color: highlightWord === part.toLowerCase() ? 'red' : 'green'}}>{part}</em>{' '}</>
 						);
 					}
 					return part + ' ';
@@ -40,7 +41,7 @@ export default function NewWords() {
 			<div className="new-words_counter">
 				<div>New words count: {newWords.length}</div>
 				<div>
-					{newWords.map(word => <button>{word}</button>)}
+					{newWords.map(word => <button onClick={() => setHighlightWord(word)}>{word}</button>)}
 				</div>
 			</div>
 		</div>
