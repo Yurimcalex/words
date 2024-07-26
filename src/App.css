@@ -4,3 +4,22 @@
   height: 100vh;
   background: lightgray;
 }
+
+
+.header {
+  padding: 15px;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu li {
+  margin-left: 25px;
+  color: gray;
+  cursor: pointer;
+}
+
+.nav-menu li:hover {
+  color: black;
+}
