@@ -38,5 +38,26 @@ export const db = {
 			if (match.length) result[part] = match;
 		}
 		return result;
+	},
+
+	isNewWord(word) {
+		for (let part in this.words) {
+			for (let w in this.words[part]) {
+				if (w === word) {
+					return false;
+				}
+			}
+		}
+		return true;
+	},
+
+	getNewWords(words) {
+		let result = [];
+		words.forEach(word => {
+			if (this.isNewWord(word)) {
+				result.push(word);
+			}
+		});
+		return result;
 	}
 };
