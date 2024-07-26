@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
 	return (
 		<div className="header">
 			<ul className="nav-menu">
 				<li>
-					<Link to="/">Words</Link>
+					<NavLink to="/">Words</NavLink>
 				</li>
 				<li>
-					<Link to="new">Get new words</Link>
+					<NavLink to="new">Get new words</NavLink>
 				</li>
 			</ul>
 		</div>
