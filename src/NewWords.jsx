@@ -4,14 +4,15 @@ import { db } from './db/db.js';
 
 export default function NewWords() {
 	const [text, setText] = useState('');
+	const [parts, setParts] = useState([]);
 	const [newWords, setNewWords] = useState([]);
 
 	const handleClick = () => {
 		const parts = divideIntoParts(text);
 		const words = getWords(parts);
 		const newWords = eliminateRepeat(db.getNewWords(words.map(toLowerCase)));
-	
-		console.log(newWords);
+		setParts(parts);
+		setNewWords(newWords);
 	};
 
 	return (
@@ -25,7 +26,14 @@ export default function NewWords() {
 				<button onClick={handleClick}>Get words</button>
 			</div>
 			
-			<div className="new-words_result">{text}</div>
+			<div className="new-words_result">
+				{parts.map(part => {
+					if (newWords.includes(part.toLowerCase())) {
+						return <><em style={{color: 'green'}}>{part}</em>{' '}</>;
+					}
+					return part + ' ';
+				})}
+			</div>
 			
 			<div className="new-words_counter">
 				<div>New words count: {newWords.length}</div>
