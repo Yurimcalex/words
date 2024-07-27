@@ -66,29 +66,29 @@ body {
 /* --------- end SearchResult ----- */
 
 
-.words {
+.page1 {
   flex: 1;
   height: 100%;
   padding: 40px;
 }
 
-.words_wrapper {
+.page1_wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.words_search .search {
+.page1_search .search {
   margin: 0 auto;
 }
 
-.words .count {
+.page1 .count {
   order: 1;
   margin-top: auto;
   text-align: right;
 }
 
-.words .search-result {
+.page1 .search-result {
   margin-top: 40px;
 }
 
