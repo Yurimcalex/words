@@ -1,7 +1,7 @@
 export default function Count({ count }) {
 	return (
-		<div className="count">
-			words count: {count}
+		<div className="count dark-dim">
+			words count: <span className="dark-select">{count}</span>
 		</div>
 	);
 }
