@@ -27,3 +27,15 @@ button.dark-btn:hover {
 	background: #2E323C;
 	color: #CBCED8;
 }
+
+.dark-select {
+	color:#1EAA43;
+}
+
+.dark-highlight {
+	color: #CDD010;
+}
+
+.dark-dim {
+	color: #363B3C;
+}

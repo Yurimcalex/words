@@ -29,11 +29,11 @@ export default function NewWords() {
 				</div>
 			</div>
 			
-			<div className="new-words_result">
+			<div className="new-words_result dark-dim">
 				{parts.map(part => {
 					if (newWords.includes(part.toLowerCase())) {
 						return (
-							<><em style={{color: highlightWord === part.toLowerCase() ? 'red' : 'green'}}>{part}</em>{' '}</>
+							<><em className={highlightWord === part.toLowerCase() ? 'dark-highlight' : 'dark-select'}>{part}</em>{' '}</>
 						);
 					}
 					return part + ' ';
