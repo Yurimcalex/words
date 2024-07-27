@@ -101,6 +101,24 @@ body {
   cursor: pointer;
 }
 
+.new-words_input > div {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 2px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.new-words_input button {
+  margin: 0;
+  padding: 7px;
+  border-radius: 3px;
+}
+
+
+
 .new-words_result {
   padding: 10px 10px 10px 20px;
   color: gray;

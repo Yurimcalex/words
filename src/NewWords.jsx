@@ -18,14 +18,15 @@ export default function NewWords() {
 
 	return (
 		<div className="new-words">
-			<div>
+			<div className="new-words_input">
 				<textarea
 					className="dark-2"
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				></textarea>
-				
-				<button className="dark-3" onClick={handleClick}>Get words</button>
+				<div className="dark-3">
+					<button className="dark-3" onClick={handleClick}>Get words</button>
+				</div>
 			</div>
 			
 			<div className="new-words_result">

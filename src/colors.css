@@ -14,14 +14,16 @@
 .dark-2 {
 	background: #2E323C;
 	color: #CBCED8;
+	border-color: #2E323C;
 }
 
 .dark-3 {
 	background: #282C38;
 	color: #C6C7CB;
+	border-color: #282C38;
 }
 
-.dark-3:hover {
+button.dark-3:hover {
 	background: #2E323C;
 	color: #CBCED8;
 }
