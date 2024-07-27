@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { db } from './db/db.js';
+import { db } from '../db/db.js';
 
 
-export default function Words() {
+export default function Page1() {
 	const [searchText, setSearchText] = useState('fundamental');
 	const searchResult = db.search(searchText.trim());
 
