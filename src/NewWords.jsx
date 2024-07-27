@@ -20,6 +20,7 @@ export default function NewWords() {
 		<div className="new-words">
 			<div className="new-words_input">
 				<textarea
+					placeholder="Put text here and get words you don't have in database."
 					className="dark-2"
 					value={text}
 					onChange={(e) => setText(e.target.value)}
