@@ -20,6 +20,7 @@ export default function NewWords() {
 		<div className="new-words">
 			<div>
 				<textarea
+					className="dark-2"
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				></textarea>
