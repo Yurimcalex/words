@@ -10,8 +10,9 @@ export default function Words() {
 		<div className="words">
 			<div>
 				<div className="words_search">
-					<div>
+					<div className="dark-2">
 						<input 
+							className="dark-2"
 							type="text"
 							value={searchText}
 							onInput={(e) => setSearchText(e.target.value)}
