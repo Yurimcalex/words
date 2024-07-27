@@ -44,6 +44,21 @@ body {
   text-align: center;
 }
 
+.words_search > div {
+  width: 300px;
+  margin: 0 auto;
+  padding: 15px 0px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.words_search input {
+  width: 260px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
 .words_counter {
   order: 1;
   margin-top: auto;

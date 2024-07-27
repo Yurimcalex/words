@@ -10,11 +10,13 @@ export default function Words() {
 		<div className="words">
 			<div>
 				<div className="words_search">
-					<input 
-						type="text"
-						value={searchText}
-						onInput={(e) => setSearchText(e.target.value)}
-					/>
+					<div>
+						<input 
+							type="text"
+							value={searchText}
+							onInput={(e) => setSearchText(e.target.value)}
+						/>
+					</div>
 				</div>
 				
 				<div className="words_counter">words amount: {db.getWordCount()}</div>
