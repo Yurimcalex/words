@@ -50,6 +50,22 @@ body {
 }
 /* --------- end Count ----- */
 
+
+/* --------- SearchResult --------- */
+.search-result_part {
+  margin-top: 25px;
+}
+
+.search-result_part > div:first-child {
+  margin-bottom: 5px;
+}
+
+.search-result_part > div:last-child {
+  padding-left: 20px;
+}
+/* --------- end SearchResult ----- */
+
+
 .words {
   flex: 1;
   height: 100%;
@@ -72,9 +88,8 @@ body {
   text-align: right;
 }
 
-.words pre {
-  margin-top: 1em;
-  font-size: 1.2em;
+.words .search-result {
+  margin-top: 40px;
 }
 
 
