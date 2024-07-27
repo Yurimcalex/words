@@ -28,34 +28,36 @@ body {
 }
 
 
+/* --------- Search --------- */
+.search {
+  width: 300px;
+  padding: 15px 0px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.search input {
+  width: 260px;
+  border: none;
+  outline: none;
+}
+/* --------- end Search ----- */
+
+
 .words {
   flex: 1;
   height: 100%;
   padding: 40px;
 }
 
-.words > div {
+.words_wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.words_search {
-  text-align: center;
-}
-
-.words_search > div {
-  width: 300px;
+.words_search .search {
   margin: 0 auto;
-  padding: 15px 0px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.words_search input {
-  width: 260px;
-  border: none;
-  outline: none;
 }
 
 .words_counter {
