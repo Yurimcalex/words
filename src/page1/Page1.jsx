@@ -11,7 +11,10 @@ export default function Page1() {
 		<div className="words">
 			<div className="words_wrapper">
 				<div className="words_search">
-					<Search />
+					<Search 
+						text={searchText}
+						onChangeText={(e) => setSearchText(e.target.value)}
+					/>
 				</div>
 				
 				<div className="words_counter">words amount: {db.getWordCount()}</div>
