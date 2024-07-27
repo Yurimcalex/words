@@ -1,26 +1,18 @@
 export default function SearchResult({ data }) {
 	return (
 		<div>
-			<pre>{makeResultStr(data)}</pre>
+			{Object.keys(data).map(part => (
+				<div key={part}>
+					<div>{part}:</div>
+					<div>
+						{data[part].map(([origin, translation]) => (
+							<div key={translation}>
+								<span>{origin}</span> - <span>{translation}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			))}
 		</div>
 	);
-}
-
-
-function makeResultStr(match) {
-	console.log(match);
-	let str = '';
-	for (let m in match) {
-		const wds = match[m];
-		str += m + ':' + '\n  ';
-
-		for (let i = 0; i < wds.length; i += 1) {
-			str += wds[i].join(' - ');
-			str += '\n';
-			if (i !== wds.length - 1) str += '  '; 
-		}
-
-		str += '\n';
-	}
-	return str;
 }
