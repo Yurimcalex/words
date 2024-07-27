@@ -24,8 +24,8 @@ export default function NewWords() {
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				></textarea>
-				<div className="dark-3">
-					<button className="dark-3" onClick={handleClick}>Get words</button>
+				<div className="dark-btn">
+					<button className="dark-btn" onClick={handleClick}>Get words</button>
 				</div>
 			</div>
 			
@@ -43,7 +43,7 @@ export default function NewWords() {
 			<div className="new-words_counter">
 				<div>New words count: {newWords.length}</div>
 				<div>
-					{newWords.map(word => <button className="dark-3" onClick={() => setHighlightWord(word)}>{word}</button>)}
+					{newWords.map(word => <button className="dark-btn" onClick={() => setHighlightWord(word)}>{word}</button>)}
 				</div>
 			</div>
 		</div>

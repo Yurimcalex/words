@@ -17,13 +17,13 @@
 	border-color: #2E323C;
 }
 
-.dark-3 {
+.dark-btn {
 	background: #282C38;
 	color: #C6C7CB;
 	border-color: #282C38;
 }
 
-button.dark-3:hover {
+button.dark-btn:hover {
 	background: #2E323C;
 	color: #CBCED8;
 }
