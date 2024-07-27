@@ -44,6 +44,12 @@ body {
 /* --------- end Search ----- */
 
 
+/* --------- Count --------- */
+.count {
+  font-size: 0.8em;
+}
+/* --------- end Count ----- */
+
 .words {
   flex: 1;
   height: 100%;
@@ -60,10 +66,9 @@ body {
   margin: 0 auto;
 }
 
-.words_counter {
+.words .count {
   order: 1;
   margin-top: auto;
-  font-size: 0.8em;
   text-align: right;
 }
 

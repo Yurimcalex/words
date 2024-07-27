@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Search from './Search.jsx';
+import Count from './Count.jsx';
 import { db } from '../db/db.js';
 
 
@@ -16,8 +17,8 @@ export default function Page1() {
 						onChangeText={(e) => setSearchText(e.target.value)}
 					/>
 				</div>
-				
-				<div className="words_counter">words amount: {db.getWordCount()}</div>
+
+				<Count count={db.getWordCount()} />
 				
 				<div>
 					<pre>{makeResultStr(searchResult)}</pre>
