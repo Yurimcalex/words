@@ -7,7 +7,7 @@ import NewWords from './NewWords.jsx';
 
 function App() {
   return (
-    <div className="app">
+    <div className="app dark-1">
       <BrowserRouter>
         <Header />
         <Routes>
