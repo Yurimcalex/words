@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import UserText from './UserText.jsx';
 import { db } from '../db/db.js';
 
 
@@ -18,18 +19,12 @@ export default function Page2() {
 
 	return (
 		<div className="new-words">
-			<div className="new-words_input">
-				<textarea
-					placeholder="Put text here and get words you don't have in database."
-					className="dark-2"
-					value={text}
-					onChange={(e) => setText(e.target.value)}
-				></textarea>
-				<div className="dark-btn">
-					<button className="dark-btn" onClick={handleClick}>Get words</button>
-				</div>
-			</div>
-			
+			<UserText 
+				text={text}
+				onTextChange={(e) => setText(e.target.value)}
+				onBtnClick={handleClick}
+			/>
+	
 			<div className="new-words_result dark-dim">
 				{parts.map(part => {
 					if (newWords.includes(part.toLowerCase())) {

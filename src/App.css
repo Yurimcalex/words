@@ -106,6 +106,41 @@ body {
 /* --------- end Page 1 ----- */
 
 
+/* --------- UserText --------- */
+.user-text {
+  text-align: right;
+}
+
+.user-text textarea {
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  resize: none;
+}
+
+.user-text > div {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 2px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.user-text button {
+  padding: 7px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* --------- end UserText ----- */
+
+
 /* --------- Page 2 --------- */
 .new-words {
   flex: 1;
@@ -118,39 +153,13 @@ body {
   flex: 1;
 }
 
-.new-words textarea {
-  width: 100%;
-  height: 300px;
-  padding: 15px;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  resize: none;
-}
-
-.new-words button {
+.new-words_counter button {
   margin: 15px 5px;
   padding: 5px;
   border: none;
   outline: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.new-words_input > div {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 2px;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 4px;
-  background: transparent;
-}
-
-.new-words_input button {
-  margin: 0;
-  padding: 7px;
-  border-radius: 3px;
 }
 
 .new-words_result {
