@@ -7,7 +7,8 @@ export default function WordButtons({ words, onBtnClick, highlightedWord }) {
 
 			<div>
 				{words.map(word => (
-					<button 
+					<button
+						key={word}
 						className="dark-btn roboto-lt fz-smr"
 						onClick={() => onBtnClick(word)}
 					>
