@@ -41,15 +41,16 @@ body {
 /* --------- Search --------- */
 .search {
   width: 300px;
-  padding: 15px 0px;
   border-radius: 10px;
   text-align: center;
 }
 
 .search input {
   width: 260px;
+  padding: 15px 0px;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 /* --------- end Search ----- */
 
