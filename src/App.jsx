@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './Header.jsx';
 import Words from './page1/Page1.jsx';
-import NewWords from './NewWords.jsx';
+import NewWords from './page2/Page2.jsx';
 
 
 function App() {
