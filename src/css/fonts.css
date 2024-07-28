@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
 
+html {
+	font-size: 16px;
+}
+
 .roboto-lt {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -28,4 +32,24 @@
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: italic;
+}
+
+.fz-norm {
+	font-size: 1em;
+} 
+
+.fz-smr {
+	font-size: 0.9em;
+}
+
+.fz-sm {
+	font-size: 0.8em;
+}
+
+.fz-bgr {
+	font-size: 1.1em;
+}
+
+.lh-bgr {
+	line-height: 1.3;
 }

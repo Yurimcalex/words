@@ -67,9 +67,7 @@ body {
 
 
 /* --------- Count --------- */
-.count {
-  font-size: 0.8em;
-}
+.count {}
 /* --------- end Count ----- */
 
 
@@ -163,7 +161,6 @@ body {
 /* --------- WordButtons --------- */
 .word-buttons > div:first-child {
   margin-bottom: 10px;
-  font-size: 0.9em;
 }
 
 .word-buttons button {
