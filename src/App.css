@@ -148,6 +148,23 @@ body {
 /* --------- end WordsResult ----- */
 
 
+/* --------- WordButtons --------- */
+.word-buttons > div:first-child {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.word-buttons button {
+  margin: 15px 5px 10px 0px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* --------- end WordButtons ----- */
+
+
 /* --------- Page 2 --------- */
 .new-words {
   flex: 1;
@@ -160,16 +177,7 @@ body {
   flex: 1;
 }
 
-.new-words_counter button {
-  margin: 15px 5px;
-  padding: 5px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.new-words_counter {
+.new-words .word-buttons {
   flex-basis: auto;
   width: 100%;
   margin-top: 20px;

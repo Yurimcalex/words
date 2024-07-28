@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import UserText from './UserText.jsx';
 import WordsResult from './WordsResult.jsx';
+import WordButtons from './WordButtons.jsx';
 import { db } from '../db/db.js';
 
 
@@ -31,24 +32,11 @@ export default function Page2() {
 				newWords={newWords}
 				highlightedWord={highlightWord}
 			/>
-	
-			{/*<div className="new-words_result dark-dim">
-				{parts.map(part => {
-					if (newWords.includes(part.toLowerCase())) {
-						return (
-							<><em className={highlightWord === part.toLowerCase() ? 'dark-highlight' : 'dark-select'}>{part}</em>{' '}</>
-						);
-					}
-					return part + ' ';
-				})}
-			</div>*/}
-			
-			<div className="new-words_counter">
-				<div>New words count: {newWords.length}</div>
-				<div>
-					{newWords.map(word => <button className="dark-btn" onClick={() => setHighlightWord(word)}>{word}</button>)}
-				</div>
-			</div>
+
+			<WordButtons 
+				words={newWords}
+				onBtnClick={setHighlightWord}
+			/>
 		</div>
 	);
 }
