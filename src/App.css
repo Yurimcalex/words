@@ -141,6 +141,13 @@ body {
 /* --------- end UserText ----- */
 
 
+/* --------- WordsResult --------- */
+.words-result {
+  padding: 10px 10px 10px 20px;
+}
+/* --------- end WordsResult ----- */
+
+
 /* --------- Page 2 --------- */
 .new-words {
   flex: 1;
@@ -160,10 +167,6 @@ body {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.new-words_result {
-  padding: 10px 10px 10px 20px;
 }
 
 .new-words_counter {

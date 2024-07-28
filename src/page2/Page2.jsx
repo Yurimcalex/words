@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import UserText from './UserText.jsx';
+import WordsResult from './WordsResult.jsx';
 import { db } from '../db/db.js';
 
 
@@ -24,8 +25,14 @@ export default function Page2() {
 				onTextChange={(e) => setText(e.target.value)}
 				onBtnClick={handleClick}
 			/>
+
+			<WordsResult 
+				textParts={parts}
+				newWords={newWords}
+				highlightedWord={highlightWord}
+			/>
 	
-			<div className="new-words_result dark-dim">
+			{/*<div className="new-words_result dark-dim">
 				{parts.map(part => {
 					if (newWords.includes(part.toLowerCase())) {
 						return (
@@ -34,7 +41,7 @@ export default function Page2() {
 					}
 					return part + ' ';
 				})}
-			</div>
+			</div>*/}
 			
 			<div className="new-words_counter">
 				<div>New words count: {newWords.length}</div>
