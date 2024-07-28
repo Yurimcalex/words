@@ -1,4 +1,4 @@
-export default function WordButtons({ words, onBtnClick }) {
+export default function WordButtons({ words, onBtnClick, highlightedWord }) {
 	return (
 		<div className="word-buttons">
 			<div className="dark-dim">
@@ -11,7 +11,7 @@ export default function WordButtons({ words, onBtnClick }) {
 						className="dark-btn"
 						onClick={() => onBtnClick(word)}
 					>
-						{word}
+						<span className={highlightedWord === word ? 'dark-highlight' : ''}>{word}</span>
 					</button>
 				))}
 			</div>

@@ -36,6 +36,7 @@ export default function Page2() {
 			<WordButtons 
 				words={newWords}
 				onBtnClick={setHighlightWord}
+				highlightedWord={highlightWord}
 			/>
 		</div>
 	);
