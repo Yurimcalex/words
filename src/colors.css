@@ -4,11 +4,19 @@
 }
 
 .dark-1 a {
-	color: #CFD2DC;
+	color: #585865;
 }
 
 .dark-1 a:hover {
 	color: #E5E7EC;
+}
+
+.dark-1 a.active {
+	color: #E5E7EC;
+}
+
+.dark-1 li {
+	border-color: #585865;
 }
 
 .dark-2 {

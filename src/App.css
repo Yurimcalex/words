@@ -11,21 +11,31 @@ body {
 }
 
 
+/* --------- Header --------- */
 .header {
   padding: 15px;
 }
 
 .nav-menu {
   display: flex;
+  padding-left: 25px;
 }
 
 .nav-menu li {
-  margin-left: 25px;
+  padding: 5px 10px;
+  border-right-width: 1px;
+  border-right-style: solid;
+  text-transform: uppercase;
+}
+
+.nav-menu li:last-child {
+  border-right: none;
 }
 
 .nav-menu li a {
   text-decoration: none;
 }
+/* --------- end Header ----- */
 
 
 /* --------- Search --------- */
