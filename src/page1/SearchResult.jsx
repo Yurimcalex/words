@@ -8,7 +8,9 @@ export default function SearchResult({ data }) {
 					<div>
 						{data[part].map(([origin, translation]) => (
 							<div key={translation}>
-								<span className="dark-highlight">{origin}</span> - <span>{translation}</span>
+								<span className="dark-highlight">{origin}</span>
+								{' - '} 
+								<span>{translation}</span>
 							</div>
 						))}
 					</div>
