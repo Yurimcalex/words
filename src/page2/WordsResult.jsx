@@ -7,7 +7,7 @@ export default function WordsResult({ textParts, newWords, highlightedWord }) {
 						<>
 							<em
 								className={part.toLowerCase() === highlightedWord 
-									? 'dark-highlight' 
+									? 'dark-highlight roboto-med-i' 
 									: 'dark-select'}
 							>
 								{part}
