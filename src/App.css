@@ -1,4 +1,5 @@
-@import "./css/colors.css";
+/*@import "./css/colors.css";*/
+@import "./css/colors-light.css";
 @import "./css/fonts.css";
 
 html {

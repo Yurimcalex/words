@@ -7,7 +7,7 @@ import NewWords from './page2/Page2.jsx';
 
 function App() {
   return (
-    <div className="app dark-1 roboto-reg">
+    <div className="app dark-1 light-1 roboto-reg">
       <BrowserRouter>
         <Header />
         <Routes>
