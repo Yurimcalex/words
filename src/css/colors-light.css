@@ -2,3 +2,19 @@
 	background: #FFFFFF;
 	color: #3F4346;
 }
+
+.light-1 a {
+	color: #717E87;
+}
+
+.light-1 a:hover {
+	color: #CBCFD2;
+}
+
+.light-1 a.active {
+	color: #CBCFD2;
+}
+
+.light-1 li {
+	border-color: #717E87;
+}
