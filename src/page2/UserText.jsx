@@ -9,9 +9,9 @@ export default function UserText({ text, onTextChange, onBtnClick }) {
 			>
 			</textarea>
 
-			<div className="dark-btn">
+			<div className="dark-btn light-btn">
 				<button 
-					className="dark-btn"
+					className="dark-btn light-btn"
 					onClick={onBtnClick}
 				>
 					Get words

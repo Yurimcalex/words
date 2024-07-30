@@ -9,7 +9,7 @@ export default function WordButtons({ words, onBtnClick, highlightedWord }) {
 				{words.map(word => (
 					<button
 						key={word}
-						className="dark-btn roboto-lt fz-smr"
+						className="dark-btn light-btn roboto-lt fz-smr"
 						onClick={() => onBtnClick(word)}
 					>
 						<span className={highlightedWord === word ? 'dark-highlight roboto-reg-i' : ''}>{word}</span>
