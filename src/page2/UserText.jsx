@@ -3,7 +3,7 @@ export default function UserText({ text, onTextChange, onBtnClick }) {
 		<div className="user-text">
 			<textarea
 				placeholder="Put text here and get words you don't have in database."
-				className="dark-2 fz-smr"
+				className="dark-2 light-2 fz-smr"
 				value={text}
 				onChange={onTextChange}
 			>
