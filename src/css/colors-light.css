@@ -35,3 +35,15 @@ button.light-btn:hover {
 	background: #ACACAC;
 	color: #FBFBFB;
 }
+
+.light-select {
+	color: #436574;
+}
+
+.light-highlight {
+	color: #AD075D;
+}
+
+.light-dim {
+	color: #B2B2B2;
+}
