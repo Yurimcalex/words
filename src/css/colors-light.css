@@ -4,19 +4,19 @@
 }
 
 .light-1 a {
-	color: #717E87;
+	color: #CBCFD2;
 }
 
 .light-1 a:hover {
-	color: #CBCFD2;
+	color: #717E87;
 }
 
 .light-1 a.active {
-	color: #CBCFD2;
+	color: #717E87;
 }
 
 .light-1 li {
-	border-color: #717E87;
+	border-color: #CBCFD2;
 }
 
 .light-2 {
