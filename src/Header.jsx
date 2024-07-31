@@ -19,7 +19,7 @@ export default function Header({ theme, setTheme }) {
 			</ul>
 
 			<ul
-				className="settings"
+				className={`settings ${theme}-dim fz-smr`}
 				onClick={handleSettingsClick}
 			>
 				<li>{theme === 'dark' ? 'Light' : 'Dark'} theme</li>
