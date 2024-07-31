@@ -1,3 +1,7 @@
+* {
+	transition: color 0.5s, background 0.5s;
+}
+
 .dark-1 {
 	background: #12151E;
 	color: #CFD2DC;
