@@ -1,17 +1,21 @@
+import useTheme from '../useTheme.js';
+
 export default function UserText({ text, onTextChange, onBtnClick }) {
+	const [theme] = useTheme();
+
 	return (
 		<div className="user-text">
 			<textarea
 				placeholder="Put text here and get words you don't have in database."
-				className="dark-2 light-2 fz-smr"
+				className={`${theme}-2 fz-smr`}
 				value={text}
 				onChange={onTextChange}
 			>
 			</textarea>
 
-			<div className="dark-btn light-btn">
+			<div className={`${theme}-btn`}>
 				<button 
-					className="dark-btn light-btn"
+					className={`${theme}-btn`}
 					onClick={onBtnClick}
 				>
 					Get words
