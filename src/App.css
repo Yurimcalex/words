@@ -25,6 +25,12 @@ body {
 /* --------- Header --------- */
 .header {
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings {
+  cursor: pointer;
 }
 
 .nav-menu {
