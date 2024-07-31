@@ -5,7 +5,7 @@ import SearchResult from './SearchResult.jsx';
 import { db } from '../db/db.js';
 
 
-export default function Page1() {
+export default function Page1({ theme }) {
 	const [searchText, setSearchText] = useState('fundamental');
 
 	return (
@@ -15,13 +15,18 @@ export default function Page1() {
 					<Search 
 						text={searchText}
 						onChangeText={(e) => setSearchText(e.target.value)}
+						theme={theme}
 					/>
 				</div>
 
-				<Count count={db.getWordCount()} />
+				<Count 
+					count={db.getWordCount()}
+					theme={theme}
+				/>
 				
 				<SearchResult
 					data={db.search(searchText.trim())}
+					theme={theme}
 				/>
 			</div>
 		</div>

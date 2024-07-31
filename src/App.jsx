@@ -7,15 +7,19 @@ import useTheme from './useTheme.js';
 
 
 function App() {
-  const [theme] = useTheme(); 
+  const [theme, changeTheme] = useTheme(); 
 
   return (
     <div className={`app ${theme}-1 roboto-reg`}>
       <BrowserRouter>
-        <Header />
+        <Header
+          theme={theme} 
+          setTheme={changeTheme}
+        />
+
         <Routes>
-          <Route path="/" element={<Words />} />
-          <Route path="new" element={<NewWords />} />
+          <Route path="/" element={<Words theme={theme} />} />
+          <Route path="new" element={<NewWords theme={theme} />} />
         </Routes>
       </BrowserRouter>
     </div>

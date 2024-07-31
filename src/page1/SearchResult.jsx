@@ -1,8 +1,4 @@
-import useTheme from '../useTheme.js';
-
-export default function SearchResult({ data }) {
-	const [theme] = useTheme();
-
+export default function SearchResult({ data, theme }) {
 	return (
 		<div className="search-result">
 			{Object.keys(data).map(part => (

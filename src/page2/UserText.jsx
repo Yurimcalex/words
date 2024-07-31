@@ -1,8 +1,4 @@
-import useTheme from '../useTheme.js';
-
-export default function UserText({ text, onTextChange, onBtnClick }) {
-	const [theme] = useTheme();
-
+export default function UserText({ text, onTextChange, onBtnClick, theme }) {
 	return (
 		<div className="user-text">
 			<textarea

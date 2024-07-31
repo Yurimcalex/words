@@ -5,7 +5,7 @@ import WordButtons from './WordButtons.jsx';
 import { db } from '../db/db.js';
 
 
-export default function Page2() {
+export default function Page2({ theme }) {
 	const [text, setText] = useState('');
 	const [parts, setParts] = useState([]);
 	const [newWords, setNewWords] = useState([]);
@@ -25,18 +25,21 @@ export default function Page2() {
 				text={text}
 				onTextChange={(e) => setText(e.target.value)}
 				onBtnClick={handleClick}
+				theme={theme}
 			/>
 
 			<WordsResult 
 				textParts={parts}
 				newWords={newWords}
 				highlightedWord={highlightWord}
+				theme={theme}
 			/>
 
 			<WordButtons 
 				words={newWords}
 				onBtnClick={setHighlightWord}
 				highlightedWord={highlightWord}
+				theme={theme}
 			/>
 		</div>
 	);

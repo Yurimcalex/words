@@ -1,8 +1,4 @@
-import useTheme from '../useTheme.js';
-
-export default function WordButtons({ words, onBtnClick, highlightedWord }) {
-	const [theme] = useTheme();
-
+export default function WordButtons({ words, onBtnClick, highlightedWord, theme }) {
 	return (
 		<div className="word-buttons">
 			<div className={`${theme}-dim fz-sm`}>

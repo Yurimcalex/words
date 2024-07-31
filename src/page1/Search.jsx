@@ -1,8 +1,4 @@
-import useTheme from '../useTheme.js';
-
-export default function Search({ text, onChangeText }) {
-	const [theme] = useTheme();
-
+export default function Search({ text, onChangeText, theme }) {
 	return (
 		<div className={`search ${theme}-2`}>
 			<input 

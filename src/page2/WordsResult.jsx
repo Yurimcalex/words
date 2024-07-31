@@ -1,8 +1,4 @@
-import useTheme from '../useTheme.js';
-
-export default function WordsResult({ textParts, newWords, highlightedWord }) {
-	const [theme] = useTheme();
-
+export default function WordsResult({ textParts, newWords, highlightedWord, theme }) {
 	return (
 		<div className={`words-result ${theme}-dim roboto-lt fz-bgr lh-bgr`}>
 			{textParts.map(part => {
