@@ -161,6 +161,33 @@ body {
 /* --------- end UserText ----- */
 
 
+/* --------- TextTranslate --------- */
+.text-translate {
+  text-align: right;
+
+}
+
+.text-translate div {
+  height: 300px;
+  padding: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: left;
+  overflow: auto;
+}
+
+.text-translate button {
+  margin-top: 23px;
+  padding: 7px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* --------- end TextTranslate ----- */
+
+
 /* --------- WordsResult --------- */
 .words-result {
   padding: 10px 10px 10px 20px;
