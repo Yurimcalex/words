@@ -4,6 +4,7 @@ import TextTranslate from './TextTranslate.jsx';
 import WordsResult from './WordsResult.jsx';
 import WordButtons from './WordButtons.jsx';
 import { db } from '../db/db.js';
+import useTranslate from '../useTranslate.jsx';
 
 
 export default function Page2({ theme }) {
@@ -13,6 +14,7 @@ export default function Page2({ theme }) {
 	const [highlightWord, setHighlightWord] = useState('');
 
 	const [showTextTranslate, setShowTextTranslate] = useState(false);
+	const [translate, setTranslate] = useTranslate();
 
 	const handleClick = () => {
 		const parts = divideIntoParts(text);
@@ -22,6 +24,7 @@ export default function Page2({ theme }) {
 		setNewWords(newWords);
 
 		setShowTextTranslate(true);
+		setTranslate(prepareToTranslate(text));
 	};
 
 	return (
@@ -29,7 +32,7 @@ export default function Page2({ theme }) {
 			{showTextTranslate
 				? (
 						<TextTranslate
-							text={text}
+							text={translate}
 							theme={theme}
 							onBtnClick={() => setShowTextTranslate(false)}
 						/>
@@ -80,4 +83,8 @@ function eliminateRepeat(words) {
 
 function toLowerCase(word) {
 	return word[0].toLowerCase() + word.slice(1);
+}
+
+function prepareToTranslate(text) {
+	return text.split('.').join(' - ');
 }

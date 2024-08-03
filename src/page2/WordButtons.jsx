@@ -25,7 +25,7 @@ export default function WordButtons({ words, onBtnClick, highlightedWord, theme 
 
 
 function translate(word) {
-	const sourceText = word;
+	const sourceText =  word;
 	const sourceLang = 'en';
 	const targetLang = 'ru';
 	const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + 
