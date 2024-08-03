@@ -34,7 +34,12 @@ export default function Page2({ theme }) {
 						<TextTranslate
 							text={translate}
 							theme={theme}
-							onBtnClick={() => setShowTextTranslate(false)}
+							onBtnClick={() => {
+								setShowTextTranslate(false);
+								setParts([]);
+								setNewWords([]);
+								setHighlightWord('');
+							}}
 						/>
 					)
 
