@@ -2,7 +2,7 @@ export default function TextTranslate({ theme, text, onBtnClick }) {
 	return (
 		<div className="text-translate">
 			<div 
-				className={`${theme}-2 roboto-lt fz-bgr lh-bgr`}
+				className={`${theme}-2 roboto-lt lh-bgr`}
 				style={{ background: 'transparent' }}
 			>
 				{text}
