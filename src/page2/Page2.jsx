@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import UserText from './UserText.jsx';
+import TextTranslate from './TextTranslate.jsx';
 import WordsResult from './WordsResult.jsx';
 import WordButtons from './WordButtons.jsx';
 import { db } from '../db/db.js';
@@ -11,22 +12,37 @@ export default function Page2({ theme }) {
 	const [newWords, setNewWords] = useState([]);
 	const [highlightWord, setHighlightWord] = useState('');
 
+	const [showTextTranslate, setShowTextTranslate] = useState(false);
+
 	const handleClick = () => {
 		const parts = divideIntoParts(text);
 		const words = getWords(parts);
 		const newWords = eliminateRepeat(db.getNewWords(words.map(toLowerCase)));
 		setParts(parts);
 		setNewWords(newWords);
+
+		setShowTextTranslate(true);
 	};
 
 	return (
 		<div className="new-words">
-			<UserText 
-				text={text}
-				onTextChange={(e) => setText(e.target.value)}
-				onBtnClick={handleClick}
-				theme={theme}
-			/>
+			{showTextTranslate
+				? (
+						<TextTranslate
+							text={text}
+							theme={theme}
+							onBtnClick={() => setShowTextTranslate(false)}
+						/>
+					)
+
+				: (
+						<UserText 
+							text={text}
+							onTextChange={(e) => setText(e.target.value)}
+							onBtnClick={handleClick}
+							theme={theme}
+						/>
+					)}
 
 			<WordsResult 
 				textParts={parts}
