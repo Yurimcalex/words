@@ -13,5 +13,10 @@ export default function useTranslate() {
 		fetch(url).then(resp => resp.json()).then(data => setText(data[0][0][0]));
 	};
 
-	return [text, translate];
+	const getTranslation = (text) => {
+		const sentences = text.split('.');
+		translate(sentences);
+	};
+
+	return [text, getTranslation];
 }
