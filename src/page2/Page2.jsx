@@ -35,6 +35,7 @@ export default function Page2({ theme }) {
 						<TextTranslate
 							theme={theme}
 							text={translation}
+							word={word.translation}
 							onBtnClick={handleGoBack}
 						/>
 					)

@@ -1,11 +1,19 @@
-export default function TextTranslate({ theme, text, onBtnClick }) {
+export default function TextTranslate({ theme, text, word, onBtnClick }) {
 	return (
 		<div className="text-translate">
 			<div 
 				className={`${theme}-2 roboto-lt lh-bgr`}
 				style={{ background: 'transparent' }}
 			>
-				{text}
+				{word && splitByWord(text, word).map(part => {
+					if (part.toLowerCase() === word) {
+						return <span className={`${theme}-highlight roboto-med-i`}>{part}</span>
+					} else {
+						return part;
+					}
+				})}
+
+				{!word && text}
 			</div>
 
 			<button 
@@ -16,4 +24,23 @@ export default function TextTranslate({ theme, text, onBtnClick }) {
 			</button>			
 		</div>
 	);
+}
+
+
+function splitByWord(textTranslation, word) {
+	const text = textTranslation.toLowerCase();
+	const result = [];
+
+	let ind = -1, start = 0;
+	while (true) {
+		ind = text.indexOf(word, start);
+		if (ind === -1) break;
+		if (start !== ind) result.push(textTranslation.slice(start, ind));
+		result.push(textTranslation.slice(ind, ind + word.length));
+		start = ind + word.length;
+	}
+
+	if (start < text.length) result.push(textTranslation.slice(start));
+
+	return result;
 }
