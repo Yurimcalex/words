@@ -3,93 +3,65 @@ import UserText from './UserText.jsx';
 import TextTranslate from './TextTranslate.jsx';
 import WordsResult from './WordsResult.jsx';
 import WordButtons from './WordButtons.jsx';
-import { db } from '../db/db.js';
 import useTranslate from '../useTranslate.jsx';
+import useWords from '../useWords.jsx';
 
 
 export default function Page2({ theme }) {
 	const [text, setText] = useState('');
-	const [parts, setParts] = useState([]);
-	const [newWords, setNewWords] = useState([]);
-	const [highlightWord, setHighlightWord] = useState('');
-
-	const [showTextTranslate, setShowTextTranslate] = useState(false);
+	const [{ textParts, words, newWords }, getInfo, resetInfo] = useWords();
 	const [translate, setTranslate] = useTranslate();
 
-	const handleClick = () => {
-		const parts = divideIntoParts(text);
-		const words = getWords(parts);
-		const newWords = eliminateRepeat(db.getNewWords(words.map(toLowerCase)));
-		setParts(parts);
-		setNewWords(newWords);
+	const [highlightedWord, setHighlightedWord] = useState('');
+	const [showTranslate, setShowTranslate] = useState(false);
+	
 
-		setShowTextTranslate(true);
-		setTranslate(prepareToTranslate(text));
+	const handleGetWords = () => {
+		getInfo(text);
+		setShowTranslate(true);
+		setTranslate(text);
 	};
+
+	const handleGoBack = () => {
+		resetInfo();
+		setShowTranslate(false);
+		setHighlightedWord('');
+	};
+
 
 	return (
 		<div className="new-words">
-			{showTextTranslate
+			{showTranslate
 				? (
 						<TextTranslate
-							text={translate}
 							theme={theme}
-							onBtnClick={() => {
-								setShowTextTranslate(false);
-								setParts([]);
-								setNewWords([]);
-								setHighlightWord('');
-							}}
+							text={translate}
+							onBtnClick={handleGoBack}
 						/>
 					)
 
 				: (
-						<UserText 
-							text={text}
-							onTextChange={(e) => setText(e.target.value)}
-							onBtnClick={handleClick}
+						<UserText
 							theme={theme}
+							text={text}
+							onBtnClick={handleGetWords}
+							onTextChange={(e) => setText(e.target.value)}
 						/>
 					)}
 
-			<WordsResult 
-				textParts={parts}
-				newWords={newWords}
-				highlightedWord={highlightWord}
+			<WordsResult
 				theme={theme}
+				textParts={textParts}
+				newWords={newWords}
+				highlightedWord={highlightedWord}
 			/>
 
-			<WordButtons 
-				words={newWords}
-				onBtnClick={setHighlightWord}
-				highlightedWord={highlightWord}
+			<WordButtons
 				theme={theme}
+				words={newWords}
+				onBtnClick={setHighlightedWord}
+				highlightedWord={highlightedWord}
 			/>
 		</div>
 	);
-}
-
-
-function divideIntoParts(textInput) {
-	return textInput
-		.split('.').join(' . ')
-		.split(',').join(' , ')
-		.split('\n').join(' ')
-		.split(' ').filter(word => !!word);
-}
-
-function getWords(parts) {
-	return parts.filter(part => part.length > 1);
-}
-
-function eliminateRepeat(words) {
-	return Array.from(new Set(words));
-}
-
-function toLowerCase(word) {
-	return word[0].toLowerCase() + word.slice(1);
-}
-
-function prepareToTranslate(text) {
-	return text.split('.').join(' - ');
 }
