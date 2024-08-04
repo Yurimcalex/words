@@ -1,4 +1,4 @@
-export default function WordButtons({ words, onBtnClick, highlightedWord, theme }) {
+export default function WordButtons({ words, onBtnClick, word, translation, theme }) {
 	return (
 		<div className="word-buttons">
 			<div className={`${theme}-dim fz-sm`}>
@@ -6,30 +6,19 @@ export default function WordButtons({ words, onBtnClick, highlightedWord, theme 
 			</div>
 
 			<div>
-				{words.map(word => (
+				{words.map(w => (
 					<button
-						key={word}
+						key={w}
 						className={`${theme}-btn roboto-lt fz-smr`}
-						onClick={() => {
-							onBtnClick(word);
-							translate(word);
-						}}
+						onClick={() => onBtnClick(w)}
 					>
-						<span className={highlightedWord === word ? `${theme}-highlight roboto-reg-i` : ''}>{word}</span>
+
+						{word === w
+							? <span className={`${theme}-highlight roboto-reg-i`}>{w} - {translation}</span>
+							: <span>{w}</span>}
 					</button>
 				))}
 			</div>
 		</div>
 	);
-}
-
-
-function translate(word) {
-	const sourceText =  word;
-	const sourceLang = 'en';
-	const targetLang = 'ru';
-	const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + 
-		sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(sourceText);
-
-	fetch(url).then(resp => resp.json()).then(data => console.log(data[0][0]));
 }

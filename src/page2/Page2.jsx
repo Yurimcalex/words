@@ -5,37 +5,36 @@ import WordsResult from './WordsResult.jsx';
 import WordButtons from './WordButtons.jsx';
 import useTranslate from '../useTranslate.jsx';
 import useWords from '../useWords.jsx';
-
+import useWord from '../useWord.jsx';
 
 export default function Page2({ theme }) {
 	const [text, setText] = useState('');
 	const [{ textParts, words, newWords }, getInfo, resetInfo] = useWords();
-	const [translate, setTranslate] = useTranslate();
+	const [translation, setTranslation] = useTranslate();
+	const [word, setWord] = useWord();
 
-	const [highlightedWord, setHighlightedWord] = useState('');
-	const [showTranslate, setShowTranslate] = useState(false);
+	const [showTranslation, setShowTranslation] = useState(false);
 	
-
 	const handleGetWords = () => {
 		getInfo(text);
-		setShowTranslate(true);
-		setTranslate(text);
+		setShowTranslation(true);
+		setTranslation(text);
 	};
 
 	const handleGoBack = () => {
 		resetInfo();
-		setShowTranslate(false);
-		setHighlightedWord('');
+		setShowTranslation(false);
+		setWord('');
 	};
 
 
 	return (
 		<div className="new-words">
-			{showTranslate
+			{showTranslation
 				? (
 						<TextTranslate
 							theme={theme}
-							text={translate}
+							text={translation}
 							onBtnClick={handleGoBack}
 						/>
 					)
@@ -53,14 +52,15 @@ export default function Page2({ theme }) {
 				theme={theme}
 				textParts={textParts}
 				newWords={newWords}
-				highlightedWord={highlightedWord}
+				highlightedWord={word.word}
 			/>
 
 			<WordButtons
 				theme={theme}
 				words={newWords}
-				onBtnClick={setHighlightedWord}
-				highlightedWord={highlightedWord}
+				onBtnClick={setWord}
+				word={word.word}
+				translation={word.translation}
 			/>
 		</div>
 	);
