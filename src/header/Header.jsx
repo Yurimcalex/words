@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Banner from './Banner.jsx';
 
 export default function Header({ theme, setTheme }) {
 	const handleSettingsClick = (e) => {
@@ -24,6 +25,8 @@ export default function Header({ theme, setTheme }) {
 			>
 				<li>{theme === 'dark' ? 'Light' : 'Dark'} theme</li>
 			</ul>
+
+			<Banner theme={theme} />
 		</div>
 	);
 }
