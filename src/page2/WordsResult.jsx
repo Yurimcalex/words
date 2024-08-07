@@ -1,18 +1,18 @@
 export default function WordsResult({ textParts, newWords, highlightedWord, theme }) {
 	return (
-		<div className={`words-result ${theme}-dim roboto-lt lh-bgr`}>
+		<div className={`words-result ${theme}-dim lh-bgr`}>
 			{textParts.map(part => {
 				if (newWords.includes(part.toLowerCase())) {
 					return (
 						<>
-							<em
+							<span
 							  key={part}
 								className={part.toLowerCase() === highlightedWord 
 									? `${theme}-highlight roboto-med-i` 
 									: `${theme}-select`}
 							>
 								{part}
-							</em>
+							</span>
 							{' '}
 						</>
 					)

@@ -3,7 +3,6 @@ export default function TextTranslate({ theme, text, word, onBtnClick }) {
 		<div className="text-translate">
 			<div 
 				className={`${theme}-2 roboto-lt lh-bgr`}
-				style={{ background: 'transparent' }}
 			>
 				{word && splitByWord(text, word).map(part => {
 					if (part.toLowerCase() === word) {
