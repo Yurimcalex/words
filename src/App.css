@@ -233,3 +233,78 @@ body {
   margin-top: 20px;
 }
 /* --------- end Page 2 ----- */
+
+
+/* --------- Banner --------- */
+.banner {
+  display: flex;
+  gap: 12px;
+  padding: 15px 15px 10px 10px;
+  border-radius: 10px;
+}
+
+.banner .square {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 1px;
+  background: green;
+  color: white;
+  font-size: 15px;
+  transform: skew(10deg) rotate(10deg);
+}
+
+.banner .square:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 20%;
+  border-radius: inherit;
+  background: inherit;
+  transform: translate(20%, -130%) skew(-65deg);
+}
+
+.banner .square:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 145%;
+  width: 25%;
+  border-radius: inherit;
+  background: inherit;
+  transform: translate(450%, -23%) skew(-45deg) rotate(-45deg);
+}
+
+.banner .down {
+  margin-top: 10px;
+}
+
+.banner .w {
+  background: #1F7FBA;
+}
+
+.banner .o {
+  background: #161718;
+}
+
+.banner .r {
+  background: #963870;
+}
+
+.banner .d {
+  background: #A17324;
+}
+
+.banner .s {
+  background: #458517;
+}
+/* --------- end Banner ----- */
