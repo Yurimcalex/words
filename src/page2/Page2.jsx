@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import UserText from './UserText.jsx';
-import TextTranslate from './TextTranslate.jsx';
+import TranslatedText from './TranslatedText.jsx';
 import WordsResult from './WordsResult.jsx';
 import WordButtons from './WordButtons.jsx';
 import useTranslate from '../useTranslate.jsx';
@@ -35,7 +35,7 @@ export default function Page2({ theme }) {
 		<div className="new-words">
 			{displayTranslation
 				? (
-						<TextTranslate
+						<TranslatedText
 							theme={theme}
 							text={translation}
 							word={word.translation}
