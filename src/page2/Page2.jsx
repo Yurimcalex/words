@@ -15,9 +15,7 @@ export default function Page2({ theme }) {
 
 
 	const [{ textParts, words, newWords }, getInfo, resetInfo] = useWords();
-	console.log(textParts, 'textParts');
-	console.log(words, 'words');
-	console.log(newWords, 'newWords');
+
 	
 	const [word, setWord] = useWord();
 
@@ -60,9 +58,9 @@ export default function Page2({ theme }) {
 
 			<HighlightedUserText
 				theme={theme}
-				textParts={textParts}
-				newWords={newWords}
-				highlightedWord={word.word}
+				text={enteredText}
+				words={newWords}
+				word={word.word}
 			/>
 
 			<NewWordsButtons
