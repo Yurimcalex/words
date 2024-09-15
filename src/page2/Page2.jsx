@@ -15,6 +15,7 @@ export default function Page2({ theme }) {
 	const [translation, setTranslation] = useTranslate();
 	const [word, setWord] = useWord();
 
+	const handleTextInput = (e) => setTextInput(e.target.value);
 	
 	
 	const handleGetWords = () => {
@@ -46,8 +47,8 @@ export default function Page2({ theme }) {
 						<UserText
 							theme={theme}
 							text={textInput}
+							onTextChange={handleTextInput}
 							onBtnClick={handleGetWords}
-							onTextChange={(e) => setTextInput(e.target.value)}
 						/>
 					)}
 
