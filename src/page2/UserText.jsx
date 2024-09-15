@@ -1,4 +1,4 @@
-export default function UserText({ text, onTextChange, onBtnClick, theme }) {
+export default function UserText({ text, onTextChange, onSubmit, theme }) {
 	return (
 		<div className="user-text">
 			<textarea
@@ -12,7 +12,7 @@ export default function UserText({ text, onTextChange, onBtnClick, theme }) {
 			<div className={`${theme}-btn`}>
 				<button 
 					className={`${theme}-btn`}
-					onClick={onBtnClick}
+					onClick={onSubmit}
 				>
 					Get words
 				</button>

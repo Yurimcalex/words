@@ -48,7 +48,7 @@ export default function Page2({ theme }) {
 							theme={theme}
 							text={textInput}
 							onTextChange={handleTextInput}
-							onBtnClick={handleGetWords}
+							onSubmit={handleGetWords}
 						/>
 					)}
 
