@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 export default function HighlightedUserText({ text, words, word, theme }) {
 	return (
 		<div className={`words-result ${theme}-dim lh-bgr`}>
@@ -7,9 +9,8 @@ export default function HighlightedUserText({ text, words, word, theme }) {
 					const match = matchWords(part, words);
 					if (match.length) {
 						return (
-							<>
+							<Fragment key={part + ind}>
 								<span
-								  key={part + ind}
 									className={match[0].toLowerCase() === word 
 										? `${theme}-highlight roboto-med-i` 
 										: `${theme}-select`}
@@ -17,7 +18,7 @@ export default function HighlightedUserText({ text, words, word, theme }) {
 									{match[0]}
 								</span>
 								{match[1]} {' '}
-							</>
+							</Fragment>
 						);
 					} else {
 						return part + ' ';
