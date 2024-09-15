@@ -9,29 +9,30 @@ import useWord from '../useWord.jsx';
 
 export default function Page2({ theme }) {
 	const [textInput, setTextInput] = useState('');
+	const [displayTranslation, setDisplayTranslation] = useState(false);
 
 	const [{ textParts, words, newWords }, getInfo, resetInfo] = useWords();
 	const [translation, setTranslation] = useTranslate();
 	const [word, setWord] = useWord();
 
-	const [showTranslation, setShowTranslation] = useState(false);
+	
 	
 	const handleGetWords = () => {
 		getInfo(textInput);
-		setShowTranslation(true);
+		setDisplayTranslation(true);
 		setTranslation(textInput);
 	};
 
 	const handleGoBack = () => {
 		resetInfo();
-		setShowTranslation(false);
+		setDisplayTranslation(false);
 		setWord('');
 	};
 
 
 	return (
 		<div className="new-words">
-			{showTranslation
+			{displayTranslation
 				? (
 						<TextTranslate
 							theme={theme}
