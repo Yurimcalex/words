@@ -1,4 +1,4 @@
-export default function TextTranslate({ theme, text, word, onBtnClick }) {
+export default function TranslatedText({ theme, text, word, onBtnClick }) {
 	return (
 		<div className="text-translate">
 			<div 

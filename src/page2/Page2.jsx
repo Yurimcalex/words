@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import UserTextInput from './UserTextInput.jsx';
 import TranslatedText from './TranslatedText.jsx';
-import WordsResult from './WordsResult.jsx';
+import HighlightedUserText from './HighlightedUserText.jsx';
 import NewWordsButtons from './NewWordsButtons.jsx';
 import useTranslate from '../useTranslate.jsx';
 import useWords from '../useWords.jsx';
@@ -58,7 +58,7 @@ export default function Page2({ theme }) {
 						/>
 					)}
 
-			<WordsResult
+			<HighlightedUserText
 				theme={theme}
 				textParts={textParts}
 				newWords={newWords}

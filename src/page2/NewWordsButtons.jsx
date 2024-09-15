@@ -1,4 +1,4 @@
-export default function WordButtons({ words, onBtnClick, word, translation, theme }) {
+export default function NewWordsButtons({ words, onBtnClick, word, translation, theme }) {
 	return (
 		<div className="word-buttons">
 			<div className={`${theme}-dim fz-sm`}>

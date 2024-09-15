@@ -1,4 +1,4 @@
-export default function WordsResult({ textParts, newWords, highlightedWord, theme }) {
+export default function HighlightedUserText({ textParts, newWords, highlightedWord, theme }) {
 	return (
 		<div className={`words-result ${theme}-dim lh-bgr`}>
 			{textParts.map(part => {

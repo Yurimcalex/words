@@ -1,4 +1,4 @@
-export default function UserText({ text, onTextChange, onSubmit, theme }) {
+export default function UserTextInput({ text, onTextChange, onSubmit, theme }) {
 	return (
 		<div className="user-text">
 			<textarea
