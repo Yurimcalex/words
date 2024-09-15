@@ -8,20 +8,23 @@ import useWords from '../useWords.jsx';
 import useWord from '../useWord.jsx';
 
 export default function Page2({ theme }) {
-	const [textInput, setTextInput] = useState('');
+	const [enteredText, setEnteredText] = useState('');
+	const [enteredTextTranslation, setEnteredTextTranslation] = useTranslate();
 	const [displayTranslation, setDisplayTranslation] = useState(false);
+	
+
 
 	const [{ textParts, words, newWords }, getInfo, resetInfo] = useWords();
-	const [translation, setTranslation] = useTranslate();
+	
 	const [word, setWord] = useWord();
 
-	const handleTextInput = (e) => setTextInput(e.target.value);
+	const handleTextInput = (e) => setEnteredText(e.target.value);
 	
 	
 	const handleGetWords = () => {
-		getInfo(textInput);
+		getInfo(enteredText);
+		setEnteredTextTranslation(enteredText);
 		setDisplayTranslation(true);
-		setTranslation(textInput);
 	};
 
 	const handleGoBack = () => {
@@ -37,7 +40,7 @@ export default function Page2({ theme }) {
 				? (
 						<TranslatedText
 							theme={theme}
-							text={translation}
+							text={enteredTextTranslation}
 							word={word.translation}
 							onBtnClick={handleGoBack}
 						/>
@@ -46,7 +49,7 @@ export default function Page2({ theme }) {
 				: (
 						<UserText
 							theme={theme}
-							text={textInput}
+							text={enteredText}
 							onTextChange={handleTextInput}
 							onSubmit={handleGetWords}
 						/>
