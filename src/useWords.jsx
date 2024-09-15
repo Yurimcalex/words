@@ -18,7 +18,7 @@ export default function useWords() {
 		setData({ words, newWords });
 	};
 
-	return [data, getWordsInfo];
+	return [data, getWordsInfo, () => setData(initialState)];
 }
 
 

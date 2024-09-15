@@ -11,7 +11,7 @@ export default function Page2({ theme }) {
 	const [enteredText, setEnteredText] = useState('');
 	const [enteredTextTranslation, setEnteredTextTranslation] = useTranslate();
 	const [displayTranslation, setDisplayTranslation] = useState(false);
-	const [{ words, newWords }, getWords] = useWords();
+	const [{ words, newWords }, getWords, resetWords] = useWords();
 
 	
 	const [word, setWord] = useWord();
@@ -27,6 +27,7 @@ export default function Page2({ theme }) {
 
 	const handleGoBack = () => {
 		setDisplayTranslation(false);
+		resetWords();
 		setWord('');
 	};
 
