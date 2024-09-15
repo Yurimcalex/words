@@ -3,8 +3,6 @@ import { db } from './db/db.js';
 
 
 const initialState = {
-	text: '',
-	textParts: [],
 	words: [],
 	newWords: []
 };
@@ -17,12 +15,10 @@ export default function useWords() {
 		const textParts = divideIntoParts(text);
 		const words = getWords(textParts);
 		const newWords = getNewWords(words);
-		setData({ text, textParts, words, newWords });
+		setData({ words, newWords });
 	};
 
-	const resetData = () => setData(initialState);
-
-	return [data, getWordsInfo, resetData];
+	return [data, getWordsInfo];
 }
 
 
