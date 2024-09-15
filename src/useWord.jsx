@@ -5,10 +5,10 @@ export default function useWord() {
 	const [word, setWord] = useState('');
 	const [translation, setTranslation] = useTranslate();
 
-	const highlight = (word) => {
+	const select = (word) => {
 		setWord(word);
 		if (word) setTranslation(word);
 	};
 
-	return [{word, translation}, highlight];
+	return [word, translation, select];
 }

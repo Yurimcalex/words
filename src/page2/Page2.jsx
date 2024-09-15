@@ -12,13 +12,11 @@ export default function Page2({ theme }) {
 	const [enteredTextTranslation, setEnteredTextTranslation] = useTranslate();
 	const [displayTranslation, setDisplayTranslation] = useState(false);
 	const [{ words, newWords }, getWords, resetWords] = useWords();
+	const [word, wordTranslation, selectWord] = useWord();
 
-	
-	const [word, setWord] = useWord();
 
 	const handleTextInput = (e) => setEnteredText(e.target.value);
-	
-	
+		
 	const handleGetWords = () => {
 		setEnteredTextTranslation(enteredText);
 		getWords(enteredText);
@@ -28,7 +26,7 @@ export default function Page2({ theme }) {
 	const handleGoBack = () => {
 		setDisplayTranslation(false);
 		resetWords();
-		setWord('');
+		selectWord('');
 	};
 
 
@@ -39,7 +37,7 @@ export default function Page2({ theme }) {
 						<TranslatedText
 							theme={theme}
 							text={enteredTextTranslation}
-							word={word.translation}
+							word={wordTranslation}
 							onBtnClick={handleGoBack}
 						/>
 					)
@@ -57,15 +55,15 @@ export default function Page2({ theme }) {
 				theme={theme}
 				text={enteredText}
 				words={newWords}
-				word={word.word}
+				word={word}
 			/>
 
 			<NewWordsButtons
 				theme={theme}
 				words={newWords}
-				onBtnClick={setWord}
-				word={word.word}
-				translation={word.translation}
+				word={word}
+				translation={wordTranslation}
+				onBtnClick={selectWord}
 			/>
 		</div>
 	);
