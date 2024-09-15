@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import UserText from './UserText.jsx';
+import UserTextInput from './UserTextInput.jsx';
 import TranslatedText from './TranslatedText.jsx';
 import WordsResult from './WordsResult.jsx';
 import WordButtons from './WordButtons.jsx';
@@ -15,6 +15,9 @@ export default function Page2({ theme }) {
 
 
 	const [{ textParts, words, newWords }, getInfo, resetInfo] = useWords();
+	console.log(textParts, 'textParts');
+	console.log(words, 'words');
+	console.log(newWords, 'newWords');
 	
 	const [word, setWord] = useWord();
 
@@ -47,7 +50,7 @@ export default function Page2({ theme }) {
 					)
 
 				: (
-						<UserText
+						<UserTextInput
 							theme={theme}
 							text={enteredText}
 							onTextChange={handleTextInput}
