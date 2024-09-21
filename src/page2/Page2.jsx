@@ -49,7 +49,7 @@ export default function Page2({ theme }) {
 
 			<NewWordsButtons
 				theme={theme}
-				words={Object.keys(state.newWords)}
+				words={displayTranslation && Object.keys(state.newWords) || []}
 				word={state.word}
 				translation={state.newWords[state.word]}
 				onBtnClick={(word) => pickWord(word, dispatch)}
