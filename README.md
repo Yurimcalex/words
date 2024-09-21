@@ -6,3 +6,4 @@ https://reactrouter.com/en/main
 
 https://github.com/matheuss/google-translate-api
 https://www.npmjs.com/package/google-translate-api-x
+https://stackoverflow.com/questions/71560393/react-usereducer-with-asynchronous-crud-operations

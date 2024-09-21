@@ -3,32 +3,21 @@ import UserTextInput from './UserTextInput.jsx';
 import TranslatedText from './TranslatedText.jsx';
 import HighlightedUserText from './HighlightedUserText.jsx';
 import NewWordsButtons from './NewWordsButtons.jsx';
-import useTranslate from '../useTranslate.jsx';
-import useWords from '../useWords.jsx';
-import useWord from '../useWord.jsx';
+import useTransition, { changeText, fetchTranslation, pickWord } from './useTranslation.js';
+
 
 export default function Page2({ theme }) {
-	const [enteredText, setEnteredText] = useState('');
-	const [enteredTextTranslation, setEnteredTextTranslation] = useTranslate();
 	const [displayTranslation, setDisplayTranslation] = useState(false);
-	const [{ words, newWords }, getWords, resetWords] = useWords();
-	const [word, wordTranslation, selectWord] = useWord();
+	const [state, dispatch] = useTransition();
 
-
-	const handleTextInput = (e) => setEnteredText(e.target.value);
+	const handleTextInput = (e) => changeText(e.target.value, dispatch);
 		
 	const handleGetWords = () => {
-		setEnteredTextTranslation(enteredText);
-		getWords(enteredText);
+		fetchTranslation(state.text, dispatch);
 		setDisplayTranslation(true);
 	};
 
-	const handleGoBack = () => {
-		setDisplayTranslation(false);
-		resetWords();
-		selectWord('');
-	};
-
+	const handleGoBack = () => setDisplayTranslation(false);
 
 	return (
 		<div className="new-words">
@@ -36,8 +25,8 @@ export default function Page2({ theme }) {
 				? (
 						<TranslatedText
 							theme={theme}
-							text={enteredTextTranslation}
-							word={wordTranslation}
+							text={state.textTranslation}
+							word={state.newWords[state.word]}
 							onBtnClick={handleGoBack}
 						/>
 					)
@@ -45,7 +34,7 @@ export default function Page2({ theme }) {
 				: (
 						<UserTextInput
 							theme={theme}
-							text={enteredText}
+							text={state.text}
 							onTextChange={handleTextInput}
 							onSubmit={handleGetWords}
 						/>
@@ -53,17 +42,17 @@ export default function Page2({ theme }) {
 
 			<HighlightedUserText
 				theme={theme}
-				text={enteredText}
-				words={newWords}
-				word={word}
+				text={state.text}
+				words={displayTranslation && Object.keys(state.newWords) || []}
+				word={state.word}
 			/>
 
 			<NewWordsButtons
 				theme={theme}
-				words={newWords}
-				word={word}
-				translation={wordTranslation}
-				onBtnClick={selectWord}
+				words={Object.keys(state.newWords)}
+				word={state.word}
+				translation={state.newWords[state.word]}
+				onBtnClick={(word) => pickWord(word, dispatch)}
 			/>
 		</div>
 	);
