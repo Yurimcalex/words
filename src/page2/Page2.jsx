@@ -10,7 +10,7 @@ export default function Page2({ theme }) {
 	const [isTranslationShowed, setIsTranslationShowed] = useState(false);
 	const [{ text, textTranslation, newWords, word, wordTranslation }, dispatch] = useTransition();
 
-	const words = isTranslationShowed && Object.keys(newWords) || [];
+	const words = isTranslationShowed && newWords || [];
 
 
 	const handleTextInput = (e) => changeText(e.target.value, dispatch);

@@ -5,7 +5,7 @@ import { db } from '../db/db.js';
 const initialState = {
 	text: '',
 	textTranslation: '',
-	newWords: {},
+	newWords: [],
 	word: '',
 	wordTranslation: ''
 };
@@ -28,20 +28,14 @@ function reducer(state, action) {
 		case 'newWords_found':
 			return { 
 				...state,
-				newWords: action.words.reduce((acc, w) => {
-					acc[w] = '';
-					return acc;
-				}, {}) 
+				newWords: action.words
 		};
 
 		case 'word_picked':
-			const words = { ...state.newWords };
-			words[action.word] = action.translation;
 			return { 
 				...state,
 				word: action.word,
 				wordTranslation: action.translation,
-				newWords: words
 			};
 
 		default:
