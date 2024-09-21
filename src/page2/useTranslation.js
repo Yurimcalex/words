@@ -72,8 +72,15 @@ export const fetchTranslation = async (text, dispatch) => {
 };
 
 
+const wordsStore = {};
 export const pickWord = async (word, dispatch) => {
-	const translation = await getTranslation(word);
+	let translation;
+	if (word in wordsStore) {
+		translation = wordsStore[word];
+	} else {
+		translation = await getTranslation(word);
+		wordsStore[word] = translation;
+	}
 	dispatch({
 		type: 'word_picked',
 		word,
