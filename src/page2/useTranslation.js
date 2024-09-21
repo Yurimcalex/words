@@ -51,8 +51,16 @@ function reducer(state, action) {
 export const changeText = (text, dispatch) => dispatch({ type: 'text_changed', text });
 
 
+const textStore = {};
 export const fetchTranslation = async (text, dispatch) => {
-	const translation = await getTranslation(text);
+	let translation;
+	if (text in textStore) {
+		translation = textStore[text];
+	} else {
+		translation = await getTranslation(text);
+		textStore[text] = translation;
+	}
+	
 	dispatch({
 	 	type: 'translation_fetched',
 	 	translation
