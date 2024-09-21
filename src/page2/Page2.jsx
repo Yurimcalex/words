@@ -8,16 +8,20 @@ import useTransition, { changeText, fetchTranslation, pickWord } from './useTran
 
 export default function Page2({ theme }) {
 	const [isTranslationShowed, setIsTranslationShowed] = useState(false);
-	const [state, dispatch] = useTransition();
+	const [{ text, textTranslation, newWords, word }, dispatch] = useTransition();
+
+	const words = isTranslationShowed && Object.keys(newWords) || [];
+
 
 	const handleTextInput = (e) => changeText(e.target.value, dispatch);
 		
 	const handleGetWords = () => {
-		fetchTranslation(state.text, dispatch);
+		fetchTranslation(text, dispatch);
 		setIsTranslationShowed(true);
 	};
 
 	const handleGoBack = () => setIsTranslationShowed(false);
+
 
 	return (
 		<div className="new-words">
@@ -25,8 +29,8 @@ export default function Page2({ theme }) {
 				? (
 						<TranslatedText
 							theme={theme}
-							text={state.textTranslation}
-							word={state.newWords[state.word]}
+							text={textTranslation}
+							word={newWords[word]}
 							onBtnClick={handleGoBack}
 						/>
 					)
@@ -34,7 +38,7 @@ export default function Page2({ theme }) {
 				: (
 						<UserTextInput
 							theme={theme}
-							text={state.text}
+							text={text}
 							onTextChange={handleTextInput}
 							onSubmit={handleGetWords}
 						/>
@@ -42,16 +46,16 @@ export default function Page2({ theme }) {
 
 			<HighlightedUserText
 				theme={theme}
-				text={state.text}
-				words={isTranslationShowed && Object.keys(state.newWords) || []}
-				word={state.word}
+				text={text}
+				words={words}
+				word={word}
 			/>
 
 			<NewWordsButtons
 				theme={theme}
-				words={isTranslationShowed && Object.keys(state.newWords) || []}
-				word={state.word}
-				translation={state.newWords[state.word]}
+				words={words}
+				word={word}
+				translation={newWords[word]}
 				onBtnClick={(word) => pickWord(word, dispatch)}
 			/>
 		</div>
