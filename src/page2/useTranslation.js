@@ -6,7 +6,8 @@ const initialState = {
 	text: '',
 	textTranslation: '',
 	newWords: {},
-	word: ''
+	word: '',
+	wordTranslation: ''
 };
 
 
@@ -39,6 +40,7 @@ function reducer(state, action) {
 			return { 
 				...state,
 				word: action.word,
+				wordTranslation: action.translation,
 				newWords: words
 			};
 
