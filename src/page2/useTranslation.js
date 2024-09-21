@@ -19,7 +19,7 @@ export default function useTransition() {
 function reducer(state, action) {
 	switch(action.type) {
 		case 'text_changed':
-			return { ...state, text: action.text };
+			return { ...initialState, text: action.text };
 
 		case 'translation_fetched':
 			return { ...state, textTranslation: action.translation };
