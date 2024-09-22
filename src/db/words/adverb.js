@@ -28,5 +28,7 @@ export default {
 	'down': 'вниз',
 	'there': 'там, туда',
 	'here': 'здесь, сюда',
+	'seldom': 'редко',
+	'often': 'часто',
 	
 };
