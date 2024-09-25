@@ -7,7 +7,8 @@ const initialState = {
 	textTranslation: '',
 	newWords: [],
 	word: '',
-	wordTranslation: ''
+	wordTranslation: '',
+	loading: false
 };
 
 
@@ -38,6 +39,12 @@ function reducer(state, action) {
 				wordTranslation: action.translation,
 			};
 
+		case 'fetch_started':
+			return { ...state, loading: true };
+
+		case 'fetch_done':
+			return { ...state, loading: false };
+
 		default:
 			return state;
 	}
@@ -53,7 +60,12 @@ export const fetchTranslation = async (text, dispatch) => {
 	if (text in textStore) {
 		translation = textStore[text];
 	} else {
+		dispatch({ type: 'fetch_started' });
 		translation = await getTranslation(text);
+		// await new Promise((resolve) => {
+		// 	setTimeout(() => resolve(), 2000);
+		// });
+		dispatch({ type: 'fetch_done' });
 		textStore[text] = translation;
 	}
 	
