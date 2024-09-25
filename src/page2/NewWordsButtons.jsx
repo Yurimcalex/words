@@ -1,4 +1,4 @@
-export default function NewWordsButtons({ words, onBtnClick, word, translation, theme }) {
+export default function NewWordsButtons({ words, onBtnClick, word, translation, isLoading, theme }) {
 	return (
 		<div className="word-buttons">
 			<div className={`${theme}-dim fz-sm`}>
@@ -10,6 +10,7 @@ export default function NewWordsButtons({ words, onBtnClick, word, translation, 
 					<button
 						key={w}
 						className={`${theme}-btn roboto-lt fz-smr`}
+						disabled={isLoading}
 						onClick={() => onBtnClick(w)}
 					>
 
