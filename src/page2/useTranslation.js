@@ -88,12 +88,16 @@ export const pickWord = async (word, dispatch) => {
 async function getTranslation(text) {
 	const sourceLang = 'en';
 	const targetLang = 'ru';
-	const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + 
-		sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(text);
 
-	const responce = await fetch(url);
-	const data = await responce.json();
-	return data[0][0][0];
+	const requests = text
+		.split('. ')
+		.map(part => fetch("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + 
+			sourceLang + "&tl=" + targetLang + "&dt=t&q=" + encodeURI(part)));
+	
+	const responses = await Promise.all(requests);
+	const translations = await Promise.all(responses.map(responce => responce.json()));
+
+	return translations.map(data => data[0][0][0]).join(' ');
 }
 
 
