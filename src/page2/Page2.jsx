@@ -8,7 +8,7 @@ import useTransition, { changeText, fetchTranslation, pickWord } from './useTran
 
 export default function Page2({ theme }) {
 	const [isTranslationShowed, setIsTranslationShowed] = useState(false);
-	const [{ text, textTranslation, newWords, word, wordTranslation }, dispatch] = useTransition();
+	const [{ text, textTranslation, newWords, word, wordTranslation, loading }, dispatch] = useTransition();
 
 	const words = isTranslationShowed && newWords || [];
 
@@ -25,7 +25,7 @@ export default function Page2({ theme }) {
 
 	return (
 		<div className="new-words">
-			{isTranslationShowed
+			{isTranslationShowed && !loading
 				? (
 						<TranslatedText
 							theme={theme}
@@ -39,6 +39,7 @@ export default function Page2({ theme }) {
 						<UserTextInput
 							theme={theme}
 							text={text}
+							isLoading={loading}
 							onTextChange={handleTextInput}
 							onSubmit={handleGetWords}
 						/>
@@ -56,6 +57,7 @@ export default function Page2({ theme }) {
 				words={words}
 				word={word}
 				translation={wordTranslation}
+				isLoading={loading}
 				onBtnClick={(word) => pickWord(word, dispatch)}
 			/>
 		</div>
