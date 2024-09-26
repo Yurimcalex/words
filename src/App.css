@@ -63,6 +63,7 @@ body {
 /* --------- Search --------- */
 .search {
   width: 300px;
+  padding-left: 3px;
   border-radius: 10px;
   text-align: center;
 }

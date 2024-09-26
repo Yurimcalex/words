@@ -7,6 +7,7 @@ export default function Search({ text, onChangeText, theme }) {
 				value={text}
 				onInput={onChangeText}
 			/>
+			&#128270;
 		</div>
 	);
 }
