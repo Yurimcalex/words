@@ -62,9 +62,6 @@ export const fetchTranslation = async (text, dispatch) => {
 	} else {
 		dispatch({ type: 'fetch_started' });
 		translation = await getTranslation(text);
-		// await new Promise((resolve) => {
-		// 	setTimeout(() => resolve(), 2000);
-		// });
 		dispatch({ type: 'fetch_done' });
 		textStore[text] = translation;
 	}
@@ -114,12 +111,6 @@ async function getTranslation(text) {
 
 
 function getNewWords(text) {
-	const parts = text
-		.split('.').join(' . ')
-		.split(',').join(' , ')
-		.split('\n').join(' ')
-		.split(' ').filter(word => !!word);
-
 	const words = getWords(text)
 		.map(word => word.toLowerCase());
 
