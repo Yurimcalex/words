@@ -120,25 +120,13 @@ function getNewWords(text) {
 		.split('\n').join(' ')
 		.split(' ').filter(word => !!word);
 
-	const words = parts
-		.filter(part => part.length > 1)
+	const words = getWords(text)
 		.map(word => word.toLowerCase());
 
 	const newWords = db.getNewWords(words);
 	return Array.from(new Set(newWords));
 }
 
-
-const testStr = `
-	This question is a few years old.
-	However, I'd just like to drop in my 2 cents regarding the modern use of this.
-	There is an increasing trend in the use of client-side templates,
-	and generally the way to define templates outside of javascript is to embed the templates within
-	a <script> tag (John Resig Microtemplating) to avoid escaping.
-	However, this means that templates are not cached, and they have to be rendered along side content.
-	A workaround could be to put the templates in a separate file, and use "script" tag to link to it,
-	but you cannot get the contents of the file without AJAX.
-`;
 
 function getWords(text) {
 	const result = [];
@@ -172,5 +160,3 @@ function getWords(text) {
 		return false;
 	}
 }
-
-getWords(testStr);
