@@ -151,3 +151,38 @@ function getWords(text) {
 		return false;
 	}
 }
+
+
+export function getParts(text) {
+	const result = [];
+	let word = '';
+
+	for (let i = 0; i < text.length; i += 1) {
+		const char = text[i];
+		const nextChar = text[i + 1];
+
+		if (isLetter(char)) {
+			word += char;
+		} else if (isRelateToWord(char)) {
+			word += char;
+		} else {
+			if (word) result.push(word);
+			word = '';
+			result.push(char);
+		}
+	}
+
+	return result;
+
+	function isRelateToWord(char, nextChar) {
+		const chars = ["'", '-'];
+		if (chars.includes(char) && nextChar !== ' ') return true;
+		return false;
+	}
+
+	function isLetter(char) {
+		const code = char.codePointAt(0)
+		if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) return true;
+		return false;
+	}
+}
