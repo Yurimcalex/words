@@ -113,8 +113,8 @@ async function getTranslation(text) {
 }
 
 
-function getNewWords(translation) {
-	const parts = translation
+function getNewWords(text) {
+	const parts = text
 		.split('.').join(' . ')
 		.split(',').join(' , ')
 		.split('\n').join(' ')
@@ -125,6 +125,52 @@ function getNewWords(translation) {
 		.map(word => word.toLowerCase());
 
 	const newWords = db.getNewWords(words);
-
 	return Array.from(new Set(newWords));
 }
+
+
+const testStr = `
+	This question is a few years old.
+	However, I'd just like to drop in my 2 cents regarding the modern use of this.
+	There is an increasing trend in the use of client-side templates,
+	and generally the way to define templates outside of javascript is to embed the templates within
+	a <script> tag (John Resig Microtemplating) to avoid escaping.
+	However, this means that templates are not cached, and they have to be rendered along side content.
+	A workaround could be to put the templates in a separate file, and use "script" tag to link to it,
+	but you cannot get the contents of the file without AJAX.
+`;
+
+function getWords(text) {
+	const result = [];
+	let word = '';
+
+	for (let i = 0; i < text.length; i += 1) {
+		const char = text[i];
+		const nextChar = text[i + 1];
+
+		if (isLetter(char)) {
+			word += char;
+		} else if (isRelateToWord(char)) {
+			word += char;
+		} else {
+			if (word) result.push(word);
+			word = '';
+		}
+	}
+
+	return result;
+
+	function isRelateToWord(char, nextChar) {
+		const chars = ["'", '-'];
+		if (chars.includes(char) && nextChar !== ' ') return true;
+		return false;
+	}
+
+	function isLetter(char) {
+		const code = char.codePointAt(0)
+		if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) return true;
+		return false;
+	}
+}
+
+getWords(testStr);
